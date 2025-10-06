@@ -1,6 +1,34 @@
 // Publications page specific JavaScript
 
+let publicationData = [];
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Load publication data from JSON file
+    loadPublicationData();
+});
+
+// Load publication data from JSON file
+async function loadPublicationData() {
+    try {
+        const response = await fetch('./publications-data.json');
+        const data = await response.json();
+        publicationData = data.publications;
+        
+        // Initialize the page after data is loaded
+        initializePage();
+    } catch (error) {
+        console.error('Error loading publication data:', error);
+        // Fallback to empty array if loading fails
+        publicationData = [];
+        initializePage();
+    }
+}
+
+// Initialize page after data is loaded
+function initializePage() {
+    // Generate publication HTML
+    generatePublicationHTML();
+    
     // Initialize publication statistics
     updatePublicationStats();
     
@@ -10,94 +38,95 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set up filter functionality
     setupFilters();
     
-    // Set up action buttons
-    setupActionButtons();
-});
+    // Set up year navigation
+    setupYearNavigation();
+}
 
-// Publication data (in a real application, this would come from an API)
-const publicationData = [
-    {
-        id: 1,
-        year: 2024,
-        type: 'journal',
-        title: 'Advanced Machine Learning Techniques for Environmental Monitoring',
-        authors: 'Your Name, Co-author 1, Co-author 2, Co-author 3',
-        journal: 'Environmental Science & Technology, 58(12), 4567-4578',
-        if: 5.2,
-        jcr: 'Q1',
-        citations: 15,
-        doi: '10.1021/acs.est.4c01234',
-        abstract: 'This study presents novel machine learning approaches for environmental monitoring applications...'
-    },
-    {
-        id: 2,
-        year: 2024,
-        type: 'conference',
-        title: 'Real-time Data Processing for IoT Environmental Sensors',
-        authors: 'Your Name, Co-author 1, Co-author 2',
-        journal: 'Proceedings of the 15th International Conference on Environmental Informatics, 2024',
-        if: null,
-        jcr: null,
-        citations: 3,
-        doi: null,
-        abstract: 'This paper presents a real-time data processing framework for IoT environmental monitoring systems...'
-    },
-    {
-        id: 3,
-        year: 2023,
-        type: 'journal',
-        title: 'Deep Learning Applications in Climate Change Research',
-        authors: 'Your Name, Co-author 1, Co-author 2, Co-author 3, Co-author 4',
-        journal: 'Nature Climate Change, 13(8), 1234-1245',
-        if: 4.8,
-        jcr: 'Q1',
-        citations: 28,
-        doi: '10.1038/s41558-023-01678-9',
-        abstract: 'This comprehensive study explores the application of deep learning techniques in climate change research...'
-    },
-    {
-        id: 4,
-        year: 2023,
-        type: 'journal',
-        title: 'Sustainable Energy Solutions for Smart Cities',
-        authors: 'Your Name, Co-author 1, Co-author 2',
-        journal: 'Renewable and Sustainable Energy Reviews, 45, 112-125',
-        if: 3.9,
-        jcr: 'Q2',
-        citations: 12,
-        doi: '10.1016/j.rser.2023.113456',
-        abstract: 'This review paper examines sustainable energy solutions and their implementation in smart city environments...'
-    }
-];
+// Generate HTML for all publications
+function generatePublicationHTML() {
+    const publicationsContent = document.querySelector('.publications-content');
+    if (!publicationsContent) return;
+
+    // Group publications by year
+    const publicationsByYear = {};
+    publicationData.forEach(pub => {
+        if (!publicationsByYear[pub.year]) {
+            publicationsByYear[pub.year] = [];
+        }
+        publicationsByYear[pub.year].push(pub);
+    });
+
+    // Sort years in descending order
+    const sortedYears = Object.keys(publicationsByYear).sort((a, b) => b - a);
+
+    // Generate HTML for each year
+    let html = '';
+    sortedYears.forEach(year => {
+        html += `
+            <div class="year-section" data-year="${year}">
+                <h3>${year}</h3>
+                <div class="publication-list">
+        `;
+        
+        publicationsByYear[year].forEach(pub => {
+            const ifScore = pub.if ? `<span class="if-score">IF: ${pub.if}</span>` : '';
+            const jcrRank = pub.jcr ? `<span class="jcr-rank">${pub.jcr === 'KCI' ? 'KCI' : 'JCR: ' + pub.jcr}</span>` : '';
+            
+            html += `
+                <div class="publication-item" data-type="${pub.type}">
+                    <div class="pub-info">
+                        <h4>${pub.title}</h4>
+                        <p class="pub-authors">${pub.authors}</p>
+                        <p class="pub-journal">${pub.journal}${pub.volume ? ', ' + pub.volume : ''}${pub.issue ? '(' + pub.issue + ')' : ''}${pub.pages ? ', ' + pub.pages : ''}</p>
+                        <div class="pub-metrics">
+                            ${ifScore}
+                            ${jcrRank}
+                        </div>
+                        <div class="pub-abstract" style="display: none;">
+                            <p><strong>Abstract:</strong> ${pub.abstract}</p>
+                            <p><strong>Keywords:</strong> ${pub.keywords.join(', ')}</p>
+                        </div>
+                    </div>
+                    <div class="pub-links">
+                        ${pub.doi ? `<a href="https://doi.org/${pub.doi}" class="pub-link" title="View Online" target="_blank"><i class="fas fa-external-link-alt"></i></a>` : ''}
+                        <a href="#" class="pub-link" title="View Abstract" onclick="toggleAbstract(this)"><i class="fas fa-eye"></i></a>
+                        <a href="#" class="pub-link" title="Download PDF"><i class="fas fa-download"></i></a>
+                        <a href="#" class="pub-link" title="Cite" onclick="showCitation(this)"><i class="fas fa-quote-right"></i></a>
+                    </div>
+                </div>
+            `;
+        });
+        
+        html += `
+                </div>
+            </div>
+        `;
+    });
+
+    publicationsContent.innerHTML = html;
+}
 
 // Update publication statistics
 function updatePublicationStats() {
     const totalPubs = publicationData.length;
-    const totalCitations = publicationData.reduce((sum, pub) => sum + pub.citations, 0);
-    const avgIF = publicationData
-        .filter(pub => pub.if !== null)
-        .reduce((sum, pub) => sum + pub.if, 0) / publicationData.filter(pub => pub.if !== null).length;
-    const hIndex = calculateHIndex(publicationData.map(pub => pub.citations));
+    const totalCitations = 78; // From your Google Scholar data
+    const hIndex = 5; // From your Google Scholar data
+    const i10Index = 2; // From your Google Scholar data
 
-    // Animate counters
-    animateCounter('total-pubs', totalPubs);
-    animateCounter('total-citations', totalCitations);
-    animateCounter('avg-if', avgIF.toFixed(1));
-    animateCounter('h-index', hIndex);
-}
+    // Update stats if elements exist
+    const elements = {
+        'total-pubs': totalPubs,
+        'total-citations': totalCitations,
+        'h-index': hIndex,
+        'i10-index': i10Index
+    };
 
-// Calculate H-index
-function calculateHIndex(citations) {
-    citations.sort((a, b) => b - a);
-    let h = 0;
-    for (let i = 0; i < citations.length; i++) {
-        if (citations[i] >= i + 1) {
-            h = i + 1;
-        } else {
-            break;
+    Object.entries(elements).forEach(([id, value]) => {
+        const element = document.getElementById(id);
+        if (element) {
+            animateCounter(id, value);
         }
-    }
-    return h;
+    });
 }
 
 // Animate counter
@@ -126,6 +155,36 @@ function animateCounter(elementId, targetValue) {
     requestAnimationFrame(updateCounter);
 }
 
+// Setup year navigation
+function setupYearNavigation() {
+    const navButtons = document.querySelectorAll('.pub-nav-btn');
+    navButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            navButtons.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const selectedYear = this.getAttribute('data-year');
+            filterByYear(selectedYear);
+        });
+    });
+}
+
+// Filter publications by year
+function filterByYear(year) {
+    const yearSections = document.querySelectorAll('.year-section');
+    
+    yearSections.forEach(section => {
+        const sectionYear = section.getAttribute('data-year');
+        if (year === 'all' || sectionYear === year) {
+            section.style.display = 'block';
+        } else {
+            section.style.display = 'none';
+        }
+    });
+}
+
 // Setup search functionality
 function setupSearch() {
     const searchInput = document.getElementById('pub-search');
@@ -133,7 +192,7 @@ function setupSearch() {
 
     searchInput.addEventListener('input', function() {
         const searchTerm = this.value.toLowerCase();
-        filterPublications();
+        filterPublications(searchTerm);
     });
 }
 
@@ -143,39 +202,34 @@ function setupFilters() {
     const typeFilter = document.getElementById('type-filter');
 
     if (yearFilter) {
-        yearFilter.addEventListener('change', filterPublications);
+        yearFilter.addEventListener('change', function() {
+            filterPublications();
+        });
     }
 
     if (typeFilter) {
-        typeFilter.addEventListener('change', filterPublications);
+        typeFilter.addEventListener('change', function() {
+            filterPublications();
+        });
     }
 }
 
 // Filter publications based on search and filters
-function filterPublications() {
-    const searchTerm = document.getElementById('pub-search').value.toLowerCase();
-    const yearFilter = document.getElementById('year-filter').value;
-    const typeFilter = document.getElementById('type-filter').value;
-
+function filterPublications(searchTerm = '') {
     const publicationItems = document.querySelectorAll('.publication-item');
     let visibleCount = 0;
 
     publicationItems.forEach(item => {
-        const title = item.querySelector('h3').textContent.toLowerCase();
+        const title = item.querySelector('h4').textContent.toLowerCase();
         const authors = item.querySelector('.pub-authors').textContent.toLowerCase();
         const journal = item.querySelector('.pub-journal').textContent.toLowerCase();
-        const year = item.closest('.year-section').getAttribute('data-year');
-        const type = item.getAttribute('data-type');
 
         const matchesSearch = searchTerm === '' || 
             title.includes(searchTerm) || 
             authors.includes(searchTerm) || 
             journal.includes(searchTerm);
 
-        const matchesYear = yearFilter === 'all' || year === yearFilter;
-        const matchesType = typeFilter === 'all' || type === typeFilter;
-
-        if (matchesSearch && matchesYear && matchesType) {
+        if (matchesSearch) {
             item.style.display = 'flex';
             visibleCount++;
         } else {
@@ -206,49 +260,16 @@ function showNoResults(show) {
         noResultsDiv = document.createElement('div');
         noResultsDiv.className = 'no-results';
         noResultsDiv.innerHTML = `
-            <i class="fas fa-search"></i>
-            <h3>No publications found</h3>
-            <p>Try adjusting your search criteria or filters</p>
+            <div style="text-align: center; padding: 2rem; color: #666;">
+                <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                <h3>No publications found</h3>
+                <p>Try adjusting your search criteria</p>
+            </div>
         `;
-        document.querySelector('.publications-list').appendChild(noResultsDiv);
+        document.querySelector('.publications-content').appendChild(noResultsDiv);
     } else if (!show && noResultsDiv) {
         noResultsDiv.remove();
     }
-}
-
-// Setup action buttons
-function setupActionButtons() {
-    // Abstract toggle functionality
-    document.querySelectorAll('.action-btn[title="View Abstract"]').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            toggleAbstract(this);
-        });
-    });
-
-    // Download functionality
-    document.querySelectorAll('.action-btn[title="Download PDF"]').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            downloadPDF(this);
-        });
-    });
-
-    // External link functionality
-    document.querySelectorAll('.action-btn[title="View Online"]').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            openExternalLink(this);
-        });
-    });
-
-    // Citation functionality
-    document.querySelectorAll('.action-btn[title="Cite"]').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            showCitation(this);
-        });
-    });
 }
 
 // Toggle abstract visibility
@@ -267,32 +288,18 @@ function toggleAbstract(button) {
     }
 }
 
-// Download PDF (placeholder)
-function downloadPDF(button) {
-    const publicationItem = button.closest('.publication-item');
-    const title = publicationItem.querySelector('h3').textContent;
-    
-    // In a real application, this would download the actual PDF
-    showNotification(`Downloading PDF for: ${title}`, 'info');
-}
-
-// Open external link (placeholder)
-function openExternalLink(button) {
-    const publicationItem = button.closest('.publication-item');
-    const title = publicationItem.querySelector('h3').textContent;
-    
-    // In a real application, this would open the actual journal link
-    showNotification(`Opening external link for: ${title}`, 'info');
-}
-
 // Show citation
 function showCitation(button) {
     const publicationItem = button.closest('.publication-item');
-    const title = publicationItem.querySelector('h3').textContent;
+    const title = publicationItem.querySelector('h4').textContent;
     const authors = publicationItem.querySelector('.pub-authors').textContent;
     const journal = publicationItem.querySelector('.pub-journal').textContent;
     
-    const citation = `${authors} (${new Date().getFullYear()}). ${title}. ${journal}.`;
+    // Find the publication data to get the year
+    const pubData = publicationData.find(pub => pub.title === title);
+    const year = pubData ? pubData.year : new Date().getFullYear();
+    
+    const citation = `${authors} (${year}). ${title}. ${journal}.`;
     
     // Copy to clipboard
     navigator.clipboard.writeText(citation).then(() => {
@@ -352,6 +359,20 @@ style.textContent = `
     @keyframes slideOut {
         from { transform: translateX(0); opacity: 1; }
         to { transform: translateX(100%); opacity: 0; }
+    }
+    
+    .pub-abstract {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: #f8f9fa;
+        border-radius: 5px;
+        border-left: 4px solid #3498db;
+    }
+    
+    .pub-abstract p {
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        line-height: 1.5;
     }
 `;
 document.head.appendChild(style);
