@@ -1,0 +1,115 @@
+# Site settings
+title: Dr. [Your Name] - Research Homepage
+description: Personal research homepage showcasing academic publications, research interests, and professional achievements
+author: Dr. [Your Name]
+email: your.email@institution.edu
+url: https://yourusername.github.io
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  publications:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "publications"
+    values:
+      layout: "publication"
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Include
+include:
+  - _pages
+
+# Social links
+social:
+  - name: ORCID
+    icon: fab fa-orcid
+    url: https://orcid.org/0000-0002-0254-9107
+  - name: Google Scholar
+    icon: fab fa-google-scholar
+    url: https://scholar.google.com/citations?user=YOUR_ID
+  - name: GitHub
+    icon: fab fa-github
+    url: https://github.com/yourusername
+  - name: LinkedIn
+    icon: fab fa-linkedin
+    url: https://linkedin.com/in/yourprofile
+  - name: Twitter
+    icon: fab fa-twitter
+    url: https://twitter.com/yourusername
+
+# Research interests
+research_interests:
+  - Machine Learning
+  - Environmental Science
+  - Climate Change
+  - Data Science
+  - IoT Applications
+
+# Current position
+current_position:
+  title: "Research Scientist"
+  institution: "Your Institution"
+  department: "Your Department"
+  location: "City, Country"
+
+# Education
+education:
+  - degree: "Ph.D."
+    field: "Your Field"
+    institution: "Your University"
+    year: "20XX"
+  - degree: "M.S."
+    field: "Your Field"
+    institution: "Your University"
+    year: "20XX"
+  - degree: "B.S."
+    field: "Your Field"
+    institution: "Your University"
+    year: "20XX"
+
+# Awards and honors
+awards:
+  - title: "Best Paper Award"
+    organization: "International Conference"
+    year: "2024"
+  - title: "Research Excellence Award"
+    organization: "Your Institution"
+    year: "2023"
+
+# Grants and funding
+grants:
+  - title: "Research Grant Title"
+    funding_agency: "Funding Agency"
+    amount: "$100,000"
+    period: "2024-2026"
+    role: "Principal Investigator"

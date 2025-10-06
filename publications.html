@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Dr. [Your Name]</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/publications.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Dr. [Your Name]</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#research" class="nav-link">Research</a>
+                <a href="publications.html" class="nav-link active">Publications</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Publications Header -->
+    <section class="publications-header">
+        <div class="container">
+            <h1>Publications</h1>
+            <p>Complete list of research publications and academic works</p>
+        </div>
+    </section>
+
+    <!-- Publications Content -->
+    <section class="publications-content">
+        <div class="container">
+            <!-- Search and Filter -->
+            <div class="publications-controls">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="pub-search" placeholder="Search publications...">
+                </div>
+                <div class="filter-controls">
+                    <select id="year-filter">
+                        <option value="all">All Years</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                    </select>
+                    <select id="type-filter">
+                        <option value="all">All Types</option>
+                        <option value="journal">Journal Articles</option>
+                        <option value="conference">Conference Papers</option>
+                        <option value="book">Books/Chapters</option>
+                        <option value="patent">Patents</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Statistics -->
+            <div class="publication-stats">
+                <div class="stat-card">
+                    <h3 id="total-pubs">0</h3>
+                    <p>Total Publications</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="total-citations">0</h3>
+                    <p>Total Citations</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="avg-if">0.0</h3>
+                    <p>Average Impact Factor</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="h-index">0</h3>
+                    <p>H-Index</p>
+                </div>
+            </div>
+
+            <!-- Publications List -->
+            <div class="publications-list">
+                <!-- 2024 Publications -->
+                <div class="year-section" data-year="2024">
+                    <h2 class="year-title">2024</h2>
+                    <div class="publication-items">
+                        <div class="publication-item" data-type="journal">
+                            <div class="pub-number">1</div>
+                            <div class="pub-content">
+                                <h3>Advanced Machine Learning Techniques for Environmental Monitoring</h3>
+                                <p class="pub-authors">Your Name, Co-author 1, Co-author 2, Co-author 3</p>
+                                <p class="pub-journal">Environmental Science & Technology, 58(12), 4567-4578</p>
+                                <div class="pub-metrics">
+                                    <span class="if-score">IF: 5.2</span>
+                                    <span class="jcr-rank">JCR: Q1</span>
+                                    <span class="citations">Citations: 15</span>
+                                    <span class="doi">DOI: 10.1021/acs.est.4c01234</span>
+                                </div>
+                                <div class="pub-abstract">
+                                    <p>This study presents novel machine learning approaches for environmental monitoring applications...</p>
+                                </div>
+                            </div>
+                            <div class="pub-actions">
+                                <a href="#" class="action-btn" title="View Abstract"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="action-btn" title="Download PDF"><i class="fas fa-download"></i></a>
+                                <a href="#" class="action-btn" title="View Online"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="action-btn" title="Cite"><i class="fas fa-quote-left"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="publication-item" data-type="conference">
+                            <div class="pub-number">2</div>
+                            <div class="pub-content">
+                                <h3>Real-time Data Processing for IoT Environmental Sensors</h3>
+                                <p class="pub-authors">Your Name, Co-author 1, Co-author 2</p>
+                                <p class="pub-journal">Proceedings of the 15th International Conference on Environmental Informatics, 2024</p>
+                                <div class="pub-metrics">
+                                    <span class="conference-type">Conference Paper</span>
+                                    <span class="citations">Citations: 3</span>
+                                </div>
+                                <div class="pub-abstract">
+                                    <p>This paper presents a real-time data processing framework for IoT environmental monitoring systems...</p>
+                                </div>
+                            </div>
+                            <div class="pub-actions">
+                                <a href="#" class="action-btn" title="View Abstract"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="action-btn" title="Download PDF"><i class="fas fa-download"></i></a>
+                                <a href="#" class="action-btn" title="View Online"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="action-btn" title="Cite"><i class="fas fa-quote-left"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2023 Publications -->
+                <div class="year-section" data-year="2023">
+                    <h2 class="year-title">2023</h2>
+                    <div class="publication-items">
+                        <div class="publication-item" data-type="journal">
+                            <div class="pub-number">3</div>
+                            <div class="pub-content">
+                                <h3>Deep Learning Applications in Climate Change Research</h3>
+                                <p class="pub-authors">Your Name, Co-author 1, Co-author 2, Co-author 3, Co-author 4</p>
+                                <p class="pub-journal">Nature Climate Change, 13(8), 1234-1245</p>
+                                <div class="pub-metrics">
+                                    <span class="if-score">IF: 4.8</span>
+                                    <span class="jcr-rank">JCR: Q1</span>
+                                    <span class="citations">Citations: 28</span>
+                                    <span class="doi">DOI: 10.1038/s41558-023-01678-9</span>
+                                </div>
+                                <div class="pub-abstract">
+                                    <p>This comprehensive study explores the application of deep learning techniques in climate change research...</p>
+                                </div>
+                            </div>
+                            <div class="pub-actions">
+                                <a href="#" class="action-btn" title="View Abstract"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="action-btn" title="Download PDF"><i class="fas fa-download"></i></a>
+                                <a href="#" class="action-btn" title="View Online"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="action-btn" title="Cite"><i class="fas fa-quote-left"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="publication-item" data-type="journal">
+                            <div class="pub-number">4</div>
+                            <div class="pub-content">
+                                <h3>Sustainable Energy Solutions for Smart Cities</h3>
+                                <p class="pub-authors">Your Name, Co-author 1, Co-author 2</p>
+                                <p class="pub-journal">Renewable and Sustainable Energy Reviews, 45, 112-125</p>
+                                <div class="pub-metrics">
+                                    <span class="if-score">IF: 3.9</span>
+                                    <span class="jcr-rank">JCR: Q2</span>
+                                    <span class="citations">Citations: 12</span>
+                                    <span class="doi">DOI: 10.1016/j.rser.2023.113456</span>
+                                </div>
+                                <div class="pub-abstract">
+                                    <p>This review paper examines sustainable energy solutions and their implementation in smart city environments...</p>
+                                </div>
+                            </div>
+                            <div class="pub-actions">
+                                <a href="#" class="action-btn" title="View Abstract"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="action-btn" title="Download PDF"><i class="fas fa-download"></i></a>
+                                <a href="#" class="action-btn" title="View Online"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="action-btn" title="Cite"><i class="fas fa-quote-left"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more years as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Dr. [Your Name]. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/publications.js"></script>
+</body>
+</html>
