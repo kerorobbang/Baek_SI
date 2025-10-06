@@ -351,6 +351,33 @@ section {
 .research-item p {
     color: #666;
     line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.related-papers {
+    text-align: left;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+}
+
+.related-papers strong {
+    color: #2c3e50;
+    font-size: 0.9rem;
+}
+
+.related-papers ul {
+    margin: 0.5rem 0 0 0;
+    padding-left: 1rem;
+}
+
+.related-papers li {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
 }
 
 /* Publications Section */
