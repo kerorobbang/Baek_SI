@@ -1,10 +1,10 @@
 # Site settings
-title: Dr. [Your Name] - Research Homepage
-description: Personal research homepage showcasing academic publications, research interests, and professional achievements
-author: Dr. [Your Name]
-email: your.email@institution.edu
-url: https://yourusername.github.io
-baseurl: ""
+title: Dr. Seungil Baek - Research Homepage
+description: Personal research homepage showcasing academic publications, research interests, and professional achievements in Civil Engineering and Remote Sensing
+author: Dr. Seungil Baek
+email: seungil.baek@email.com
+url: https://kerorobbang.github.io
+baseurl: "/Baek_SI"
 
 # Build settings
 markdown: kramdown
@@ -69,32 +69,32 @@ social:
 
 # Research interests
 research_interests:
-  - Machine Learning
-  - Environmental Science
-  - Climate Change
-  - Data Science
-  - IoT Applications
+  - Construction Materials
+  - Remote Sensing
+  - Structural Health Monitoring
+  - Civil Infrastructure
+  - Machine Learning Applications
 
 # Current position
 current_position:
   title: "Research Scientist"
-  institution: "Your Institution"
-  department: "Your Department"
-  location: "City, Country"
+  institution: "Research Institute"
+  department: "Civil Engineering"
+  location: "South Korea"
 
 # Education
 education:
   - degree: "Ph.D."
-    field: "Your Field"
-    institution: "Your University"
+    field: "Civil Engineering"
+    institution: "University"
     year: "20XX"
   - degree: "M.S."
-    field: "Your Field"
-    institution: "Your University"
+    field: "Civil Engineering"
+    institution: "University"
     year: "20XX"
   - degree: "B.S."
-    field: "Your Field"
-    institution: "Your University"
+    field: "Civil Engineering"
+    institution: "University"
     year: "20XX"
 
 # Awards and honors
