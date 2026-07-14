@@ -19,9 +19,10 @@ Seungil Baek(백승일, 부산대학교) 개인 연구자 홈페이지. Google S
 ├── gallery.html
 └── assets/
     ├── css/style.css        공용 스타일 (그리드 패턴, 모달, 플레이스홀더 이미지 등)
-    └── js/
-        ├── theme.js         Tailwind 디자인 토큰 + 다크모드 + 모바일 메뉴
-        └── publications.js  논문 목록 데이터 + 검색/필터/모달 렌더링
+    ├── js/
+    │   ├── theme.js         Tailwind 디자인 토큰 + 다크모드 + 모바일 메뉴
+    │   └── publications.js  논문 목록 데이터 + 검색/필터/모달 렌더링
+    └── images/              프로필 사진 + 갤러리 사진 (PNU-QUREOS 랩 사이트에서 가져옴)
 ```
 
 ## 로컬에서 미리보기
@@ -41,5 +42,5 @@ python -m http.server 8000
 
 - **논문 목록**: [assets/js/publications.js](assets/js/publications.js) 상단의 `PUBLICATIONS` 배열을 수정. [Google Scholar 프로필](https://scholar.google.co.kr/citations?user=MsjuSigAAAAJ)이 원본 출처.
 - **통계(총 인용수 / h-index / i10-index)**: [index.html](index.html)의 Stats 섹션에서 직접 수정.
-- **이미지**: 현재 히어로/갤러리는 CSS 그라디언트 플레이스홀더(`.ph` 클래스)입니다. `assets/images/`에 실제 사진을 넣고 해당 `<img>` 또는 배경으로 교체하세요.
-- **이메일 등 연락처**: 각 페이지의 `mailto:` 링크(현재 placeholder)를 실제 주소로 교체하세요.
+- **이미지**: `assets/images/`에 프로필 사진(`portrait.jpg`)과 갤러리 사진(카테고리별 7종 × 3장)이 들어 있습니다. [PNU-QUREOS Activity 페이지](https://sites.google.com/view/pnu-qureos/activity)에서 가져온 실제 현장조사 사진입니다. 더 넣거나 교체하려면 같은 폴더에 파일을 추가하고 `gallery.html`/`index.html`의 `<img src="assets/images/...">`를 수정하세요.
+- **이메일 등 연락처**: `seung1100@pusan.ac.kr`(PNU-QUREOS Members 페이지에서 확인된 실제 주소)를 사용 중입니다. 바뀌면 각 페이지의 `mailto:` 링크를 교체하세요.
