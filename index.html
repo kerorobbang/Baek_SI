@@ -1,445 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seungil Baek - Research Homepage</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seungil Baek — Remote Sensing Researcher</title>
+<meta name="description" content="Seungil Baek — remote sensing researcher at Pusan National University. Coastal & ocean remote sensing, UAV / airborne hyperspectral & multispectral imaging, and machine learning for environmental monitoring.">
+<!-- Tailwind Play CDN + shared design tokens -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="assets/js/theme.js"></script>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">Seungil Baek</a>
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#research" class="nav-link">Research</a>
-                <a href="#publications" class="nav-link">Publications</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+<body class="bg-background text-on-background font-body-md text-body-md dark:bg-primary dark:text-inverse-on-surface selection:bg-secondary selection:text-on-secondary">
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">Seungil Baek</h1>
-                <p class="hero-subtitle">PhD Researcher | Geomatics & Construction Management System</p>
-                <p class="hero-description">
-                    Passionate researcher focused on hyperspectral remote sensing, computer vision for construction materials, and marine environmental monitoring. 
-                    Committed to advancing knowledge through innovative research and collaboration.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#publications" class="btn btn-primary">View Publications</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="profile-image">
-                    <img src="assets/images/profile.jpg" alt="Dr. Seungil Baek" onerror="this.style.display='none'">
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ===== Top Nav ===== -->
+<header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-surface/95 dark:bg-primary/95 shadow-sm dark:shadow-none transition-all duration-300">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<a class="font-display-md text-headline-md font-extrabold text-primary dark:text-inverse-primary tracking-tight" href="index.html">Seungil Baek</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="nav-link text-secondary dark:text-secondary-fixed border-b-2 border-secondary dark:border-secondary-fixed pb-1 font-label-bold text-label-bold" href="index.html">Home</a>
+<a class="nav-link text-on-surface-variant dark:text-surface-variant pb-1 hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300 font-label-bold text-label-bold" href="research.html">Research</a>
+<a class="nav-link text-on-surface-variant dark:text-surface-variant pb-1 hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300 font-label-bold text-label-bold" href="publications.html">Publications</a>
+<a class="nav-link text-on-surface-variant dark:text-surface-variant pb-1 hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300 font-label-bold text-label-bold" href="gallery.html">Gallery</a>
+</nav>
+<div class="flex items-center gap-2">
+<button data-theme-toggle aria-label="Toggle dark mode" class="p-2 rounded-full hover:bg-surface-variant dark:hover:bg-primary-container transition-colors text-on-surface-variant dark:text-surface-variant hover:text-secondary duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 0;">dark_mode</span>
+</button>
+<button data-mobile-toggle aria-label="Open menu" class="md:hidden p-2 rounded-full text-on-surface-variant dark:text-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile menu -->
+<nav data-mobile-menu class="hidden md:hidden flex-col gap-1 px-gutter pb-4 bg-surface/98 dark:bg-primary/98 border-t border-surface-variant dark:border-primary-container">
+<a class="py-2 font-label-bold text-secondary dark:text-secondary-fixed" href="index.html">Home</a>
+<a class="py-2 font-label-bold text-on-surface-variant dark:text-surface-variant" href="research.html">Research</a>
+<a class="py-2 font-label-bold text-on-surface-variant dark:text-surface-variant" href="publications.html">Publications</a>
+<a class="py-2 font-label-bold text-on-surface-variant dark:text-surface-variant" href="gallery.html">Gallery</a>
+</nav>
+</header>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I am a dedicated PhD researcher with expertise in Geomatics and Construction Management System. 
-                        My research focuses on hyperspectral remote sensing, construction materials analysis using computer vision, 
-                        and marine/coastal environmental monitoring applications.
-                    </p>
-                    <p>
-                        Currently, I am a PhD Researcher at Pusan National University specializing in geomatics and 
-                        construction management systems. I have published 20 papers in peer-reviewed 
-                        journals including Construction and Building Materials, IEEE Transactions on Geoscience and Remote Sensing, 
-                        Korean Journal of Remote Sensing, and Water.
-                    </p>
-                    <div class="research-interests">
-                        <h3>Research Interests</h3>
-                        <ul>
-                            <li>Hyperspectral Remote Sensing</li>
-                            <li>Construction Materials Analysis</li>
-                            <li>Machine Learning Applications</li>
-                            <li>Geomatics & Surveying</li>
-                            <li>Coastal & Marine Engineering</li>
-                            <li>Computer Vision</li>
-                            <li>Environmental Monitoring</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <h3>20</h3>
-                        <p>Publications</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>78</h3>
-                        <p>Citations</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>5</h3>
-                        <p>H-Index</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<main class="pt-24 pb-section-padding-desktop">
 
-    <!-- Research Section -->
-    <section id="research" class="research">
-        <div class="container">
-            <h2 class="section-title">Professional Expertise</h2>
-            <div class="research-grid">
-                <div class="research-item">
-                    <div class="research-icon">
-                        <i class="fas fa-water"></i>
-                    </div>
-                    <h3>Marine Remote Sensing</h3>
-                    <p>Specialized in hyperspectral and multispectral remote sensing for marine and coastal environments including red tide detection, macroalgal distribution analysis, benthic mapping, and water quality assessment using aircraft and UAV platforms.</p>
-                    <div class="related-papers">
-                        <strong>Related Publications:</strong>
-                        <ul>
-                            <li>"A Red Tide Quantification Approach for Multispectral Camera" (2025)</li>
-                            <li>"Review on Hyperspectral Remote Sensing of Tidal Zones" (2025)</li>
-                            <li>"Benthic Mapping of Uljin Coast Based on Airborne Hyperspectral Imagery" (2021)</li>
-                            <li>"Estimation of Benthic Microalgae Chlorophyll-a Concentration" (2021)</li>
-                            <li>"Validation of GOCI-II Products in an Inner Bay" (2022)</li>
-                            <li>"Analysis on Optical and Water Quality Measurements for Red Tide Waters" (2022)</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="research-item">
-                    <div class="research-icon">
-                        <i class="fas fa-cube"></i>
-                    </div>
-                    <h3>Construction Materials Analysis</h3>
-                    <p>Developing computer vision and machine learning approaches for concrete aggregate property estimation and quality control using hyperspectral imaging, SAM models, and advanced image processing techniques for construction industry applications.</p>
-                    <div class="related-papers">
-                        <strong>Related Publications:</strong>
-                        <ul>
-                            <li>"Estimation of coarse aggregate properties using hyperspectral imaging and machine learning" (2025)</li>
-                            <li>"Evaluation of coarse aggregate properties based on segment anything model (SAM)" (2024)</li>
-                            <li>"Hyperspectral Remote Sensing of TiO2 Concentration in Cementitious Material" (2022)</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="research-item">
-                    <div class="research-icon">
-                        <i class="fas fa-map-marked-alt"></i>
-                    </div>
-                    <h3>Surveying & Photogrammetry</h3>
-                    <p>Advanced surveying techniques using UAV-based multispectral cameras, precision improvement of exterior orientation, pixel positioning, and intercalibration methods for accurate geospatial data acquisition and processing.</p>
-                    <div class="related-papers">
-                        <strong>Related Publications:</strong>
-                        <ul>
-                            <li>"Improving Precision of Exterior Orientation and Pixel Position of Multispectral Camera onboard a Drone" (2021)</li>
-                            <li>"Calculation of correction coefficients for RedEdge-MX multispectral camera through intercalibration" (2020)</li>
-                            <li>"BRDF Data for Coniferous Forests Acquired from Multispectral Camera Onboard a UAV" (2023)</li>
-                            <li>"De-Striping and De-Smiling of Aerial Hyperspectral Image for Water Color Analysis" (2023)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ===== Hero ===== -->
+<section class="relative w-full max-w-container-max mx-auto px-gutter py-section-padding-desktop grid grid-cols-1 md:grid-cols-12 gap-stack-lg items-center" id="home">
+<div class="absolute top-0 right-0 w-1/2 h-full bg-grid-pattern opacity-50 -z-10 pointer-events-none rounded-l-3xl"></div>
+<div class="md:col-span-7 flex flex-col items-start space-y-6">
+<span class="inline-block px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-bold text-xs uppercase tracking-wider">Remote Sensing Researcher · Pusan National University</span>
+<h1 class="font-display-lg text-display-lg text-primary dark:text-inverse-primary text-balance leading-tight">
+Observing the Earth through <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-tertiary-container dark:from-secondary-fixed dark:to-tertiary-fixed-dim">light and data</span>.
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-surface-variant max-w-2xl text-balance">
+I develop remote sensing methods that turn multispectral and hyperspectral imagery — from drones, aircraft, and satellites — into quantitative insight about coastal waters, tidal zones, forests, and the built environment, often paired with machine learning.
+</p>
+<div class="flex flex-wrap gap-4 pt-4">
+<a class="inline-flex items-center justify-center px-6 py-3 bg-primary text-on-primary rounded-full font-label-bold hover:bg-primary-container hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md dark:bg-secondary dark:hover:bg-secondary-container dark:text-on-secondary" href="publications.html">View Publications</a>
+<a class="inline-flex items-center justify-center px-6 py-3 border-2 border-outline-variant text-primary dark:text-inverse-primary rounded-full font-label-bold hover:border-primary dark:hover:border-secondary-fixed hover:-translate-y-1 transition-all duration-300" href="#contact">Get in Touch</a>
+</div>
+<div class="flex items-center flex-wrap gap-3 pt-6 border-t border-surface-variant dark:border-primary-container w-full mt-4">
+<span class="font-label-bold text-on-surface-variant dark:text-surface-variant mr-2">Connect:</span>
+<a aria-label="ORCID" title="ORCID" class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant text-on-surface-variant dark:text-surface-variant hover:bg-secondary hover:text-on-secondary hover:border-secondary transition-colors duration-300" href="https://orcid.org/0000-0002-0254-9107" target="_blank" rel="noopener">
+<span class="material-symbols-outlined" style="font-size:20px;">fingerprint</span></a>
+<a aria-label="Google Scholar" title="Google Scholar" class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant text-on-surface-variant dark:text-surface-variant hover:bg-secondary hover:text-on-secondary hover:border-secondary transition-colors duration-300" href="https://scholar.google.co.kr/citations?user=MsjuSigAAAAJ" target="_blank" rel="noopener">
+<span class="material-symbols-outlined" style="font-size:20px;">school</span></a>
+<a aria-label="GitHub" title="GitHub" class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant text-on-surface-variant dark:text-surface-variant hover:bg-secondary hover:text-on-secondary hover:border-secondary transition-colors duration-300" href="https://github.com/kerorobbang" target="_blank" rel="noopener">
+<span class="material-symbols-outlined" style="font-size:20px;">code</span></a>
+<!-- TODO: replace with real email -->
+<a aria-label="Email" title="Email" class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant text-on-surface-variant dark:text-surface-variant hover:bg-secondary hover:text-on-secondary hover:border-secondary transition-colors duration-300" href="mailto:baek@pusan.ac.kr">
+<span class="material-symbols-outlined" style="font-size:20px;">mail</span></a>
+</div>
+</div>
+<!-- Portrait placeholder (swap for a real photo: assets/images/portrait.jpg) -->
+<div class="md:col-span-5 relative">
+<div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg border border-surface-variant dark:border-primary-container ph ph-grid flex items-center justify-center">
+<div class="relative z-10 text-center text-inverse-on-surface/90 px-6">
+<span class="material-symbols-outlined" style="font-size:64px;">satellite_alt</span>
+<p class="font-label-bold text-label-bold mt-3 uppercase tracking-widest opacity-80">Add portrait photo</p>
+</div>
+</div>
+<div class="absolute -bottom-6 -right-6 w-24 h-24 bg-grid-pattern opacity-40 -z-10 rounded-lg"></div>
+</div>
+</section>
 
-    <!-- Publications Section -->
-    <section id="publications" class="publications">
-        <div class="container">
-            <h2 class="section-title">Publications</h2>
-            <div class="publications-nav">
-                <button class="pub-nav-btn active" data-year="all">All</button>
-                <button class="pub-nav-btn" data-year="2025">2025</button>
-                <button class="pub-nav-btn" data-year="2024">2024</button>
-                <button class="pub-nav-btn" data-year="2023">2023</button>
-                <button class="pub-nav-btn" data-year="2022">2022</button>
-                <button class="pub-nav-btn" data-year="2021">2021</button>
-                <button class="pub-nav-btn" data-year="2020">2020</button>
-            </div>
-            
-            <div class="publications-content">
-                <!-- 2025 Publications -->
-                <div class="year-section" data-year="2025">
-                    <h3>2025</h3>
-                    <div class="publication-list">
-                        <div class="publication-item">
-                            <div class="pub-info">
-                                <h4>Estimation of coarse aggregate properties in concrete using hyperspectral imaging and machine learning</h4>
-                                <p class="pub-authors">Sooyoon Koh, Wonkook Kim, Seungil Baek, Taewan Kim</p>
-                                <p class="pub-journal">Construction and Building Materials, 2025</p>
-                                <div class="pub-metrics">
-                                    <span class="if-score">IF: 8.0</span>
-                                    <span class="jcr-rank">JCR: Q1</span>
-                                </div>
-                            </div>
-                            <div class="pub-links">
-                                <a href="https://doi.org/10.1016/j.conbuildmat.2025.142073" class="pub-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="pub-link"><i class="fas fa-download"></i></a>
-                            </div>
-                        </div>
-                        <div class="publication-item">
-                            <div class="pub-info">
-                                <h4>A red tide quantification approach for an inexpensive multispectral camera onboard an aircraft</h4>
-                                <p class="pub-authors">Seungil Baek, Sooyoon Koh, Moonho Son, Seunghoon Park, Wonkook Kim</p>
-                                <p class="pub-journal">IEEE Transactions on Geoscience and Remote Sensing, 2025</p>
-                                <div class="pub-metrics">
-                                    <span class="if-score">IF: 8.6</span>
-                                    <span class="jcr-rank">JCR: Q1</span>
-                                </div>
-                            </div>
-                            <div class="pub-links">
-                                <a href="https://doi.org/10.1109/TGRS.2025.3534835" class="pub-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="pub-link"><i class="fas fa-download"></i></a>
-                            </div>
-                        </div>
-                        <div class="publication-item">
-                            <div class="pub-info">
-                                <h4>Review on Hyperspectral Remote Sensing of Tidal Zones</h4>
-                                <p class="pub-authors">Seungil Baek, Wonkook Kim</p>
-                                <p class="pub-journal">Ocean Science Journal, 2025</p>
-                                <div class="pub-metrics">
-                                    <span class="if-score">IF: 1.4</span>
-                                    <span class="jcr-rank">JCR: Q3</span>
-                                </div>
-                            </div>
-                            <div class="pub-links">
-                                <a href="https://doi.org/10.1007/s12601-024-00189-4" class="pub-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="pub-link"><i class="fas fa-download"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- ===== Stats ===== -->
+<section class="max-w-container-max mx-auto px-gutter py-12">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-stack-md">
+<div class="bg-surface dark:bg-primary-container rounded-xl p-6 md:p-8 border border-outline-variant dark:border-primary-container shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-center items-center text-center group">
+<div class="w-12 h-12 bg-primary-fixed rounded-full flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform duration-300"><span class="material-symbols-outlined">library_books</span></div>
+<h3 class="font-display-md text-display-md text-primary dark:text-inverse-primary mb-1">26</h3>
+<p class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant uppercase tracking-wider">Publications</p>
+</div>
+<div class="bg-surface dark:bg-primary-container rounded-xl p-6 md:p-8 border border-outline-variant dark:border-primary-container shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-center items-center text-center group">
+<div class="w-12 h-12 bg-primary-fixed rounded-full flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform duration-300"><span class="material-symbols-outlined">format_quote</span></div>
+<h3 class="font-display-md text-display-md text-primary dark:text-inverse-primary mb-1">110</h3>
+<p class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant uppercase tracking-wider">Total Citations</p>
+</div>
+<div class="bg-surface dark:bg-primary-container rounded-xl p-6 md:p-8 border border-outline-variant dark:border-primary-container shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-center items-center text-center group">
+<div class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"><span class="material-symbols-outlined">analytics</span></div>
+<h3 class="font-display-md text-display-md text-primary dark:text-inverse-primary mb-1">6</h3>
+<p class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant uppercase tracking-wider">H-Index</p>
+</div>
+<div class="bg-surface dark:bg-primary-container rounded-xl p-6 md:p-8 border border-outline-variant dark:border-primary-container shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-center items-center text-center group">
+<div class="w-12 h-12 bg-primary-fixed rounded-full flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform duration-300"><span class="material-symbols-outlined">trending_up</span></div>
+<h3 class="font-display-md text-display-md text-primary dark:text-inverse-primary mb-1">4</h3>
+<p class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant uppercase tracking-wider">i10-Index</p>
+</div>
+</div>
+<p class="text-center text-xs text-outline dark:text-surface-variant mt-4">Source: Google Scholar profile.</p>
+</section>
 
-                <!-- 2024 Publications -->
-                <div class="year-section" data-year="2024">
-                    <h3>2024</h3>
-                    <div class="publication-list">
-                        <div class="publication-item">
-                            <div class="pub-info">
-                                <h4>Evaluation of coarse aggregate properties in hardened concrete based on segment anything model (SAM)</h4>
-                                <p class="pub-authors">Seungil Baek, Sooyoon Koh, Wonkook Kim, Taewan Kim</p>
-                                <p class="pub-journal">Construction and Building Materials, 2024</p>
-                                <div class="pub-metrics">
-                                    <span class="if-score">IF: 7.4</span>
-                                    <span class="jcr-rank">JCR: Q1</span>
-                                </div>
-                            </div>
-                            <div class="pub-links">
-                                <a href="https://doi.org/10.1016/j.conbuildmat.2024.139013" class="pub-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="pub-link"><i class="fas fa-download"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- ===== About ===== -->
+<section class="max-w-container-max mx-auto px-gutter py-section-padding-desktop">
+<div class="bg-surface-container dark:bg-primary-container rounded-2xl p-8 md:p-12 border border-surface-variant dark:border-primary-container">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<div class="md:col-span-4">
+<h2 class="font-headline-lg text-headline-lg text-primary dark:text-inverse-primary mb-4">About Me</h2>
+<div class="w-12 h-1 bg-secondary rounded-full"></div>
+</div>
+<div class="md:col-span-8 space-y-6 text-on-surface-variant dark:text-surface-variant">
+<p class="font-body-lg text-body-lg text-balance">I am a remote sensing researcher at Pusan National University working across optical remote sensing platforms — unmanned aerial vehicles, manned aircraft, and satellite sensors. My work focuses on extracting quantitative environmental information from multispectral and hyperspectral imagery.</p>
+<p class="font-body-md text-body-md text-balance">Recent projects span red tide and ocean-color quantification, hyperspectral mapping of tidal flats and coastal vegetation, radiometric and geometric calibration of drone-mounted cameras, and machine-learning approaches to problems such as forest-fire classification and material property estimation. I care about turning raw imagery into reliable, reproducible measurements.</p>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-label-bold">Remote Sensing</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-high dark:bg-primary text-on-surface dark:text-surface-variant text-xs font-label-bold">Hyperspectral</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-high dark:bg-primary text-on-surface dark:text-surface-variant text-xs font-label-bold">UAV &amp; Airborne</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-high dark:bg-primary text-on-surface dark:text-surface-variant text-xs font-label-bold">Ocean Color</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-high dark:bg-primary text-on-surface dark:text-surface-variant text-xs font-label-bold">Machine Learning</span>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-                <!-- 2023 Publications -->
-                <div class="year-section" data-year="2023">
-                    <h3>2023</h3>
-                    <div class="publication-list">
-                        <div class="publication-item">
-                            <div class="pub-info">
-                                <h4>BRDF Data for Coniferous Forests Acquired from Multispectral Camera Onboard a Unmanned Aerial Vehicle</h4>
-                                <p class="pub-authors">Seungil Baek, Sooyoon Koh, Jong Hyuk Lee, Wonkook Kim</p>
-                                <p class="pub-journal">GEO DATA, 2023</p>
-                                <div class="pub-metrics">
-                                    <span class="jcr-rank">KCI</span>
-                                </div>
-                            </div>
-                            <div class="pub-links">
-                                <a href="https://doi.org/10.22761/GD.2023.0057" class="pub-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="pub-link"><i class="fas fa-download"></i></a>
-                            </div>
-                        </div>
-                        <div class="publication-item">
-                            <div class="pub-info">
-                                <h4>De-Striping and De-Smiling of Aerial Hyperspectral Image for Water Color Analysis</h4>
-                                <p class="pub-authors">Wonkook Kim, Seungil Baek, Soon Heun Hong</p>
-                                <p class="pub-journal">GEO DATA, 2023</p>
-                                <div class="pub-metrics">
-                                    <span class="jcr-rank">KCI</span>
-                                </div>
-                            </div>
-                            <div class="pub-links">
-                                <a href="https://doi.org/10.22761/GD.2023.0035" class="pub-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="pub-link"><i class="fas fa-download"></i></a>
-                            </div>
-                        </div>
-                        <div class="publication-item">
-                            <div class="pub-info">
-                                <h4>Experimental investigations using computer vision for debris motion generated by solitary waves</h4>
-                                <p class="pub-authors">Taeyoon Kim, Taegeon Hwang, Seungil Baek, Sunghoon Hong, Jiwon Kim, Woo-Dong Lee</p>
-                                <p class="pub-journal">Journal of Earthquake and Tsunami, 2023</p>
-                                <div class="pub-metrics">
-                                    <span class="if-score">IF: 2.1</span>
-                                    <span class="jcr-rank">JCR: Q3</span>
-                                </div>
-                            </div>
-                            <div class="pub-links">
-                                <a href="https://doi.org/10.1142/s1793431123500161" class="pub-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="pub-link"><i class="fas fa-download"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- ===== Selected Publications ===== -->
+<section class="max-w-container-max mx-auto px-gutter py-section-padding-desktop" id="publications">
+<div class="flex flex-col md:flex-row justify-between items-baseline mb-stack-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary dark:text-inverse-primary mb-2">Selected Publications</h2>
+<p class="font-body-md text-on-surface-variant dark:text-surface-variant">Highlighting recent and high-impact work.</p>
+</div>
+<a class="mt-4 md:mt-0 font-label-bold text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-inverse-primary flex items-center gap-1 transition-colors bg-secondary/10 px-4 py-2 rounded-full" href="publications.html">View Full List <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="flex flex-col gap-stack-md">
 
-                <!-- 2022 Publications -->
-                <div class="year-section" data-year="2022">
-                    <h3>2022</h3>
-                    <div class="publication-list">
-                        <div class="publication-item">
-                            <div class="pub-info">
-                                <h4>Analysis on the fire progression and severity variation of the massive forest fire occurred in Uljin, Korea, 2022</h4>
-                                <p class="pub-authors">Seungil Baek, Joongbin Lim, Wonkook Kim</p>
-                                <p class="pub-journal">Forests, 2022</p>
-                                <div class="pub-metrics">
-                                    <span class="if-score">IF: 2.4</span>
-                                    <span class="jcr-rank">JCR: Q1</span>
-                                </div>
-                            </div>
-                            <div class="pub-links">
-                                <a href="https://doi.org/10.3390/f13122185" class="pub-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="pub-link"><i class="fas fa-download"></i></a>
-                            </div>
-                        </div>
-                        <div class="publication-item">
-                            <div class="pub-info">
-                                <h4>Hyperspectral Remote Sensing of TiO2 Concentration in Cementitious Material Based on Machine Learning Approaches</h4>
-                                <p class="pub-authors">Tae-Min Oh, Seungil Baek, Tae-Hyun Kong, Sooyoon Koh, Jaehun Ahn, Wonkook Kim</p>
-                                <p class="pub-journal">Remote Sensing, 2022</p>
-                                <div class="pub-metrics">
-                                    <span class="if-score">IF: 4.2</span>
-                                    <span class="jcr-rank">JCR: Q1</span>
-                                </div>
-                            </div>
-                            <div class="pub-links">
-                                <a href="https://doi.org/10.3390/rs14010189" class="pub-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="pub-link"><i class="fas fa-download"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- Selected 1 -->
+<div class="bg-surface dark:bg-primary-container rounded-xl p-6 border border-outline-variant dark:border-primary-container border-l-4 border-l-secondary shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2 py-1 bg-surface-variant dark:bg-primary text-on-surface-variant dark:text-surface-variant text-xs font-label-bold rounded">2025</span>
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container text-xs font-label-bold rounded">Journal · Review</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary dark:text-inverse-primary mb-2 leading-snug">Review on hyperspectral remote sensing of tidal zones</h3>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant mb-4">S. Baek, W. Kim.<br><span class="italic text-surface-tint dark:text-primary-fixed-dim">Ocean Science Journal, 60(1), 3.</span></p>
+<div class="flex gap-4 items-center mt-auto border-t border-surface-variant dark:border-primary pt-4">
+<a class="text-sm font-label-bold text-secondary dark:text-secondary-fixed hover:text-primary flex items-center gap-1 bg-secondary/10 px-4 py-2 rounded-full" href="https://scholar.google.com/scholar?q=Review+on+hyperspectral+remote+sensing+of+tidal+zones+Baek" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]">link</span> Scholar</a>
+<span class="ml-auto text-sm font-label-bold text-outline dark:text-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">format_quote</span> 13 Citations</span>
+</div>
+</div>
 
-                <!-- 2021 Publications -->
-                <div class="year-section" data-year="2021">
-                    <h3>2021</h3>
-                    <div class="publication-list">
-                        <div class="publication-item">
-                            <div class="pub-info">
-                                <h4>Planar Installation Characteristics of Crown Depth-Variable Artificial Coral Reef on Improving Coastal Resilience</h4>
-                                <p class="pub-authors">Sunghoon Hong, Seungil Baek, Yeonjoong Kim, Jooyong Lee, Adi Prasetyo, Wonkook Kim, Soonchul Kwon</p>
-                                <p class="pub-journal">Water, 2021</p>
-                                <div class="pub-metrics">
-                                    <span class="if-score">IF: 3.0</span>
-                                    <span class="jcr-rank">JCR: Q2</span>
-                                </div>
-                            </div>
-                            <div class="pub-links">
-                                <a href="https://doi.org/10.3390/w13111526" class="pub-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="pub-link"><i class="fas fa-download"></i></a>
-                            </div>
-                        </div>
-                        <div class="publication-item">
-                            <div class="pub-info">
-                                <h4>A Preliminary Study on Benthic Mapping of Uljin Coast Based on Airborne Hyperspectral Imagery</h4>
-                                <p class="pub-authors">Wonkook Kim, Sung Hak Kim, Seung-Il Baek, Hyunkyum Kim, Jaehong Oh</p>
-                                <p class="pub-journal">Journal of Coastal Research, 2021</p>
-                                <div class="pub-metrics">
-                                    <span class="if-score">IF: 1.11</span>
-                                    <span class="jcr-rank">JCR: Q4</span>
-                                </div>
-                            </div>
-                            <div class="pub-links">
-                                <a href="https://doi.org/10.2112/jcr-si114-094.1" class="pub-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="pub-link"><i class="fas fa-download"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- Selected 2 -->
+<div class="bg-surface dark:bg-primary-container rounded-xl p-6 border border-outline-variant dark:border-primary-container border-l-4 border-l-secondary shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2 py-1 bg-surface-variant dark:bg-primary text-on-surface-variant dark:text-surface-variant text-xs font-label-bold rounded">2022</span>
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container text-xs font-label-bold rounded">Journal · Deep Learning</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary dark:text-inverse-primary mb-2 leading-snug">Deep learning-based forest fire classification evaluation for application of CAS500-4</h3>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant mb-4">S. Cha, M. Won, K. Jang, K. Kim, W. Kim, S. Baek, J. Lim.<br><span class="italic text-surface-tint dark:text-primary-fixed-dim">Korean Journal of Remote Sensing, 38(6), 1273–1283.</span></p>
+<div class="flex gap-4 items-center mt-auto border-t border-surface-variant dark:border-primary pt-4">
+<a class="text-sm font-label-bold text-secondary dark:text-secondary-fixed hover:text-primary flex items-center gap-1 bg-secondary/10 px-4 py-2 rounded-full" href="https://scholar.google.com/scholar?q=Deep+learning-based+forest+fire+classification+CAS500-4" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]">link</span> Scholar</a>
+<span class="ml-auto text-sm font-label-bold text-outline dark:text-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">format_quote</span> 14 Citations</span>
+</div>
+</div>
 
-                <!-- 2020 Publications -->
-                <div class="year-section" data-year="2020">
-                    <h3>2020</h3>
-                    <div class="publication-list">
-                        <div class="publication-item">
-                            <div class="pub-info">
-                                <h4>Improved coastal erosion prevention using a hybrid method with an artificial coral reef</h4>
-                                <p class="pub-authors">Taeyoon Kim, Seungil Baek, Yongju Kwon, Jooyong Lee, Sung Min Cha, Soonchul Kwon</p>
-                                <p class="pub-journal">Water, 2020</p>
-                                <div class="pub-metrics">
-                                    <span class="if-score">IF: 3.0</span>
-                                    <span class="jcr-rank">JCR: Q2</span>
-                                </div>
-                            </div>
-                            <div class="pub-links">
-                                <a href="https://doi.org/10.3390/w12102801" class="pub-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="pub-link"><i class="fas fa-download"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Selected 3 -->
+<div class="bg-surface dark:bg-primary-container rounded-xl p-6 border border-outline-variant dark:border-primary-container border-l-4 border-l-secondary shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2 py-1 bg-surface-variant dark:bg-primary text-on-surface-variant dark:text-surface-variant text-xs font-label-bold rounded">2020</span>
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container text-xs font-label-bold rounded">Journal · Most Cited</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary dark:text-inverse-primary mb-2 leading-snug">Improved coastal erosion prevention using a hybrid method with an artificial coral reef: Large-scale 3D hydraulic experiment</h3>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant mb-4">T. Kim, S. Baek, Y. Kwon, J. Lee, S.M. Cha, S. Kwon.<br><span class="italic text-surface-tint dark:text-primary-fixed-dim">Water, 12(10), 2801.</span></p>
+<div class="flex gap-4 items-center mt-auto border-t border-surface-variant dark:border-primary pt-4">
+<a class="text-sm font-label-bold text-secondary dark:text-secondary-fixed hover:text-primary flex items-center gap-1 bg-secondary/10 px-4 py-2 rounded-full" href="https://scholar.google.com/scholar?q=Improved+coastal+erosion+prevention+hybrid+artificial+coral+reef" target="_blank" rel="noopener"><span class="material-symbols-outlined text-[16px]">link</span> Scholar</a>
+<span class="ml-auto text-sm font-label-bold text-outline dark:text-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">format_quote</span> 21 Citations</span>
+</div>
+</div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <p>seung1100@pusan.ac.kr</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Office</h3>
-                            <p>Room 520, Civil Engineering Building, Pusan National University, Busan, South Korea</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <h3>Connect with me</h3>
-                    <div class="social-icons">
-                        <a href="https://orcid.org/0000-0002-0254-9107" target="_blank" class="social-link">
-                            <i class="fab fa-orcid"></i>
-                        </a>
-                        <a href="https://scholar.google.co.kr/citations?user=MsjuSigAAAAJ&hl=ko" target="_blank" class="social-link">
-                            <i class="fab fa-google-scholar"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+</div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Seungil Baek. All rights reserved.</p>
-        </div>
-    </footer>
+<!-- ===== Research Initiatives ===== -->
+<section class="bg-surface-container dark:bg-primary-container py-section-padding-desktop mt-stack-lg" id="research">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary dark:text-inverse-primary mb-4">Research Directions</h2>
+<p class="font-body-lg text-on-surface-variant dark:text-surface-variant max-w-2xl mx-auto">Three connected themes across optical remote sensing platforms and analysis methods.</p>
+<a href="research.html" class="inline-flex items-center gap-2 mt-6 font-label-bold text-secondary dark:text-secondary-fixed hover:text-primary transition-colors">Explore Research Domains <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-md">
+<div class="bg-surface dark:bg-primary rounded-2xl overflow-hidden border border-surface-variant dark:border-primary-container shadow-sm group">
+<div class="h-40 ph ph-grid relative overflow-hidden flex items-center justify-center">
+<span class="material-symbols-outlined text-inverse-on-surface/90 relative z-10" style="font-size:48px;">water</span>
+</div>
+<div class="p-6">
+<span class="text-xs font-label-bold text-secondary dark:text-secondary-fixed mb-2 block uppercase tracking-wide">Theme 01</span>
+<h3 class="font-headline-md text-headline-md text-primary dark:text-inverse-primary mb-3">Coastal &amp; Ocean Remote Sensing</h3>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant">Quantifying red tides, ocean color, tidal-flat vegetation and benthic habitats with UAV, airborne and GOCI-II data.</p>
+</div>
+</div>
+<div class="bg-surface dark:bg-primary rounded-2xl overflow-hidden border border-surface-variant dark:border-primary-container shadow-sm group">
+<div class="h-40 ph ph-grid relative overflow-hidden flex items-center justify-center">
+<span class="material-symbols-outlined text-inverse-on-surface/90 relative z-10" style="font-size:48px;">flightsmode</span>
+</div>
+<div class="p-6">
+<span class="text-xs font-label-bold text-secondary dark:text-secondary-fixed mb-2 block uppercase tracking-wide">Theme 02</span>
+<h3 class="font-headline-md text-headline-md text-primary dark:text-inverse-primary mb-3">UAV &amp; Airborne Imaging</h3>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant">Radiometric &amp; geometric calibration, BRDF correction, and hyperspectral acquisition from drones and manned aircraft.</p>
+</div>
+</div>
+<div class="bg-surface dark:bg-primary rounded-2xl overflow-hidden border border-surface-variant dark:border-primary-container shadow-sm group">
+<div class="h-40 ph ph-grid relative overflow-hidden flex items-center justify-center">
+<span class="material-symbols-outlined text-inverse-on-surface/90 relative z-10" style="font-size:48px;">neurology</span>
+</div>
+<div class="p-6">
+<span class="text-xs font-label-bold text-secondary dark:text-secondary-fixed mb-2 block uppercase tracking-wide">Theme 03</span>
+<h3 class="font-headline-md text-headline-md text-primary dark:text-inverse-primary mb-3">Machine Learning for Monitoring</h3>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant">Forest-fire classification, material property estimation and segmentation (SAM) built on spectral imagery.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <script src="assets/js/script.js"></script>
+<!-- ===== Contact ===== -->
+<section class="max-w-container-max mx-auto px-gutter py-section-padding-desktop" id="contact">
+<div class="bg-primary rounded-3xl p-8 md:p-16 text-center text-on-primary relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+<h2 class="font-headline-lg text-headline-lg mb-4 relative z-10">Interested in Collaboration?</h2>
+<p class="font-body-lg text-inverse-primary max-w-xl mx-auto mb-8 relative z-10">I'm open to discussing remote sensing projects, data collaborations, and student research opportunities.</p>
+<a class="inline-flex items-center justify-center px-8 py-4 bg-surface text-primary rounded-full font-label-bold hover:bg-surface-variant hover:scale-105 transition-all duration-300 relative z-10" href="mailto:baek@pusan.ac.kr"><span class="material-symbols-outlined mr-2">mail</span> Send an Email</a>
+</div>
+</section>
+
+<!-- ===== Gallery preview ===== -->
+<section class="max-w-container-max mx-auto px-gutter py-section-padding-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-8">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary dark:text-inverse-primary mb-2">In the Field &amp; Lab</h2>
+<p class="font-body-md text-on-surface-variant dark:text-surface-variant">A glimpse into field campaigns and spectral analysis work.</p>
+</div>
+<a href="gallery.html" class="mt-4 md:mt-0 font-label-bold text-secondary dark:text-secondary-fixed hover:text-primary flex items-center gap-1 transition-colors">Explore Gallery <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="aspect-video rounded-xl overflow-hidden border border-surface-variant dark:border-primary-container shadow-sm ph ph-grid flex items-end p-4"><span class="relative z-10 font-label-bold text-label-bold text-on-primary bg-black/20 backdrop-blur-sm px-2 py-1 rounded">UAV Field Campaign</span></div>
+<div class="aspect-video rounded-xl overflow-hidden border border-surface-variant dark:border-primary-container shadow-sm ph ph-grid flex items-end p-4"><span class="relative z-10 font-label-bold text-label-bold text-on-primary bg-black/20 backdrop-blur-sm px-2 py-1 rounded">Hyperspectral Lab</span></div>
+<div class="aspect-video rounded-xl overflow-hidden border border-surface-variant dark:border-primary-container shadow-sm ph ph-grid flex items-end p-4"><span class="relative z-10 font-label-bold text-label-bold text-on-primary bg-black/20 backdrop-blur-sm px-2 py-1 rounded">Coastal Survey</span></div>
+</div>
+</section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="w-full py-stack-md px-gutter flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto bg-surface-container dark:bg-primary-container font-body-md text-body-md border-t border-outline-variant dark:border-primary mt-12 rounded-t-xl">
+<div class="mb-4 md:mb-0 text-center md:text-left">
+<span class="font-display-md text-headline-md font-bold text-primary dark:text-inverse-primary block mb-1">Seungil Baek</span>
+<span class="text-on-surface-variant dark:text-on-primary-container text-sm">© 2026 Seungil Baek · Pusan National University</span>
+</div>
+<div class="flex flex-wrap gap-6 items-center justify-center">
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-secondary transition-all font-label-bold opacity-80 hover:opacity-100" href="mailto:baek@pusan.ac.kr">Email</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-secondary transition-all font-label-bold opacity-80 hover:opacity-100" href="https://orcid.org/0000-0002-0254-9107" target="_blank" rel="noopener">ORCID</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-secondary transition-all font-label-bold opacity-80 hover:opacity-100" href="https://scholar.google.co.kr/citations?user=MsjuSigAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-secondary transition-all font-label-bold opacity-80 hover:opacity-100" href="https://github.com/kerorobbang" target="_blank" rel="noopener">GitHub</a>
+</div>
+</footer>
+
 </body>
 </html>

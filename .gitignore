@@ -1,0 +1,12 @@
+# Claude Code local tooling (not part of the site)
+.claude/
+.agents/
+skills-lock.json
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

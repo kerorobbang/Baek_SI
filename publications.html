@@ -1,213 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications - Seungil Baek</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/publications.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications — Seungil Baek</title>
+<meta name="description" content="Peer-reviewed publications by Seungil Baek in remote sensing, hyperspectral imaging, UAV/airborne sensing and machine learning.">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="assets/js/theme.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">Seungil Baek</a>
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="index.html#about" class="nav-link">About</a>
-                <a href="index.html#research" class="nav-link">Research</a>
-                <a href="publications.html" class="nav-link active">Publications</a>
-                <a href="index.html#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+<body class="bg-background text-on-surface dark:bg-primary dark:text-inverse-on-surface antialiased pt-24 min-h-screen flex flex-col">
 
-    <!-- Publications Header -->
-    <section class="publications-header">
-        <div class="container">
-            <h1>Publications</h1>
-            <p>Complete list of research publications and academic works</p>
-        </div>
-    </section>
+<!-- ===== Top Nav ===== -->
+<header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-surface/95 dark:bg-primary/95 shadow-sm dark:shadow-none transition-all duration-300">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<a class="font-display-md text-headline-md font-extrabold text-primary dark:text-inverse-primary tracking-tight" href="index.html">Seungil Baek</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="nav-link text-on-surface-variant dark:text-surface-variant pb-1 hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300 font-label-bold text-label-bold" href="index.html">Home</a>
+<a class="nav-link text-on-surface-variant dark:text-surface-variant pb-1 hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300 font-label-bold text-label-bold" href="research.html">Research</a>
+<a aria-current="page" class="nav-link text-secondary dark:text-secondary-fixed border-b-2 border-secondary dark:border-secondary-fixed pb-1 font-label-bold text-label-bold" href="publications.html">Publications</a>
+<a class="nav-link text-on-surface-variant dark:text-surface-variant pb-1 hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300 font-label-bold text-label-bold" href="gallery.html">Gallery</a>
+</nav>
+<div class="flex items-center gap-2">
+<button data-theme-toggle aria-label="Toggle dark mode" class="p-2 rounded-full hover:bg-surface-variant dark:hover:bg-primary-container transition-colors text-on-surface-variant dark:text-surface-variant hover:text-secondary duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 0;">dark_mode</span>
+</button>
+<button data-mobile-toggle aria-label="Open menu" class="md:hidden p-2 rounded-full text-on-surface-variant dark:text-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<nav data-mobile-menu class="hidden md:hidden flex-col gap-1 px-gutter pb-4 bg-surface/98 dark:bg-primary/98 border-t border-surface-variant dark:border-primary-container">
+<a class="py-2 font-label-bold text-on-surface-variant dark:text-surface-variant" href="index.html">Home</a>
+<a class="py-2 font-label-bold text-on-surface-variant dark:text-surface-variant" href="research.html">Research</a>
+<a class="py-2 font-label-bold text-secondary dark:text-secondary-fixed" href="publications.html">Publications</a>
+<a class="py-2 font-label-bold text-on-surface-variant dark:text-surface-variant" href="gallery.html">Gallery</a>
+</nav>
+</header>
 
-    <!-- Publications Content -->
-    <section class="publications-content">
-        <div class="container">
-            <!-- Search and Filter -->
-            <div class="publications-controls">
-                <div class="search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="pub-search" placeholder="Search publications...">
-                </div>
-                <div class="filter-controls">
-                    <select id="year-filter">
-                        <option value="all">All Years</option>
-                        <option value="2024">2024</option>
-                        <option value="2023">2023</option>
-                        <option value="2022">2022</option>
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                    </select>
-                    <select id="type-filter">
-                        <option value="all">All Types</option>
-                        <option value="journal">Journal Articles</option>
-                        <option value="conference">Conference Papers</option>
-                        <option value="book">Books/Chapters</option>
-                        <option value="patent">Patents</option>
-                    </select>
-                </div>
-            </div>
+<main class="flex-grow w-full max-w-container-max mx-auto px-gutter pb-section-padding-desktop">
 
-            <!-- Statistics -->
-            <div class="publication-stats">
-                <div class="stat-card">
-                    <h3 id="total-pubs">0</h3>
-                    <p>Total Publications</p>
-                </div>
-                <div class="stat-card">
-                    <h3 id="total-citations">0</h3>
-                    <p>Total Citations</p>
-                </div>
-                <div class="stat-card">
-                    <h3 id="avg-if">0.0</h3>
-                    <p>Average Impact Factor</p>
-                </div>
-                <div class="stat-card">
-                    <h3 id="h-index">0</h3>
-                    <p>H-Index</p>
-                </div>
-            </div>
+<!-- Page header -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop max-w-3xl">
+<h1 class="font-display-lg text-display-lg text-primary dark:text-inverse-primary mb-6">Publications</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-surface-variant">A complete archive of peer-reviewed journal articles across remote sensing, hyperspectral &amp; multispectral imaging, UAV/airborne platforms, coastal engineering, and machine learning. Click any entry for full citation details.</p>
+</section>
 
-            <!-- Publications List -->
-            <div class="publications-list">
-                <!-- 2024 Publications -->
-                <div class="year-section" data-year="2024">
-                    <h2 class="year-title">2024</h2>
-                    <div class="publication-items">
-                        <div class="publication-item" data-type="journal">
-                            <div class="pub-number">1</div>
-                            <div class="pub-content">
-                                <h3>Advanced Machine Learning Techniques for Environmental Monitoring</h3>
-                                <p class="pub-authors">Your Name, Co-author 1, Co-author 2, Co-author 3</p>
-                                <p class="pub-journal">Environmental Science & Technology, 58(12), 4567-4578</p>
-                                <div class="pub-metrics">
-                                    <span class="if-score">IF: 5.2</span>
-                                    <span class="jcr-rank">JCR: Q1</span>
-                                    <span class="citations">Citations: 15</span>
-                                    <span class="doi">DOI: 10.1021/acs.est.4c01234</span>
-                                </div>
-                                <div class="pub-abstract">
-                                    <p>This study presents novel machine learning approaches for environmental monitoring applications...</p>
-                                </div>
-                            </div>
-                            <div class="pub-actions">
-                                <a href="#" class="action-btn" title="View Abstract"><i class="fas fa-eye"></i></a>
-                                <a href="#" class="action-btn" title="Download PDF"><i class="fas fa-download"></i></a>
-                                <a href="#" class="action-btn" title="View Online"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="action-btn" title="Cite"><i class="fas fa-quote-left"></i></a>
-                            </div>
-                        </div>
+<!-- Search & filter -->
+<section class="mb-stack-lg bg-surface-container-lowest dark:bg-primary-container rounded-xl p-6 shadow-sm border border-surface-container-high dark:border-primary-container">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-end">
+<div class="md:col-span-6 relative">
+<label class="sr-only" for="search">Search publications</label>
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span class="material-symbols-outlined text-on-surface-variant">search</span></div>
+<input id="search" type="text" placeholder="Search by title, author, or keyword…" class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg bg-surface-container-lowest dark:bg-primary text-on-surface dark:text-inverse-on-surface placeholder-on-surface-variant focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary sm:text-sm transition-all">
+</div>
+<div class="md:col-span-3">
+<label class="block font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant mb-2 uppercase tracking-wider" for="topicFilter">Topic</label>
+<select id="topicFilter" class="block w-full py-3 px-4 border border-outline-variant bg-surface-container-lowest dark:bg-primary rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary text-on-surface dark:text-inverse-on-surface transition-all">
+<option value="">All Topics</option>
+<option>Ocean &amp; Coastal</option>
+<option>UAV &amp; Airborne</option>
+<option>ML &amp; Materials</option>
+<option>Coastal Engineering</option>
+</select>
+</div>
+<div class="md:col-span-3">
+<label class="block font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant mb-2 uppercase tracking-wider" for="yearFilter">Year</label>
+<select id="yearFilter" class="block w-full py-3 px-4 border border-outline-variant bg-surface-container-lowest dark:bg-primary rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary text-on-surface dark:text-inverse-on-surface transition-all">
+<option value="">All Years</option>
+<option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option>
+</select>
+</div>
+</div>
+<div class="mt-6 flex flex-wrap gap-2" id="quickTags"></div>
+</section>
 
-                        <div class="publication-item" data-type="conference">
-                            <div class="pub-number">2</div>
-                            <div class="pub-content">
-                                <h3>Real-time Data Processing for IoT Environmental Sensors</h3>
-                                <p class="pub-authors">Your Name, Co-author 1, Co-author 2</p>
-                                <p class="pub-journal">Proceedings of the 15th International Conference on Environmental Informatics, 2024</p>
-                                <div class="pub-metrics">
-                                    <span class="conference-type">Conference Paper</span>
-                                    <span class="citations">Citations: 3</span>
-                                </div>
-                                <div class="pub-abstract">
-                                    <p>This paper presents a real-time data processing framework for IoT environmental monitoring systems...</p>
-                                </div>
-                            </div>
-                            <div class="pub-actions">
-                                <a href="#" class="action-btn" title="View Abstract"><i class="fas fa-eye"></i></a>
-                                <a href="#" class="action-btn" title="Download PDF"><i class="fas fa-download"></i></a>
-                                <a href="#" class="action-btn" title="View Online"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="action-btn" title="Cite"><i class="fas fa-quote-left"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- Results count -->
+<p id="resultCount" class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant uppercase tracking-wider mb-stack-md"></p>
 
-                <!-- 2023 Publications -->
-                <div class="year-section" data-year="2023">
-                    <h2 class="year-title">2023</h2>
-                    <div class="publication-items">
-                        <div class="publication-item" data-type="journal">
-                            <div class="pub-number">3</div>
-                            <div class="pub-content">
-                                <h3>Deep Learning Applications in Climate Change Research</h3>
-                                <p class="pub-authors">Your Name, Co-author 1, Co-author 2, Co-author 3, Co-author 4</p>
-                                <p class="pub-journal">Nature Climate Change, 13(8), 1234-1245</p>
-                                <div class="pub-metrics">
-                                    <span class="if-score">IF: 4.8</span>
-                                    <span class="jcr-rank">JCR: Q1</span>
-                                    <span class="citations">Citations: 28</span>
-                                    <span class="doi">DOI: 10.1038/s41558-023-01678-9</span>
-                                </div>
-                                <div class="pub-abstract">
-                                    <p>This comprehensive study explores the application of deep learning techniques in climate change research...</p>
-                                </div>
-                            </div>
-                            <div class="pub-actions">
-                                <a href="#" class="action-btn" title="View Abstract"><i class="fas fa-eye"></i></a>
-                                <a href="#" class="action-btn" title="Download PDF"><i class="fas fa-download"></i></a>
-                                <a href="#" class="action-btn" title="View Online"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="action-btn" title="Cite"><i class="fas fa-quote-left"></i></a>
-                            </div>
-                        </div>
+<!-- Publication list (rendered) -->
+<section id="pubList" class="space-y-stack-lg"></section>
+<p id="noResults" class="hidden text-center py-16 text-on-surface-variant dark:text-surface-variant">No publications match your filters.</p>
 
-                        <div class="publication-item" data-type="journal">
-                            <div class="pub-number">4</div>
-                            <div class="pub-content">
-                                <h3>Sustainable Energy Solutions for Smart Cities</h3>
-                                <p class="pub-authors">Your Name, Co-author 1, Co-author 2</p>
-                                <p class="pub-journal">Renewable and Sustainable Energy Reviews, 45, 112-125</p>
-                                <div class="pub-metrics">
-                                    <span class="if-score">IF: 3.9</span>
-                                    <span class="jcr-rank">JCR: Q2</span>
-                                    <span class="citations">Citations: 12</span>
-                                    <span class="doi">DOI: 10.1016/j.rser.2023.113456</span>
-                                </div>
-                                <div class="pub-abstract">
-                                    <p>This review paper examines sustainable energy solutions and their implementation in smart city environments...</p>
-                                </div>
-                            </div>
-                            <div class="pub-actions">
-                                <a href="#" class="action-btn" title="View Abstract"><i class="fas fa-eye"></i></a>
-                                <a href="#" class="action-btn" title="Download PDF"><i class="fas fa-download"></i></a>
-                                <a href="#" class="action-btn" title="View Online"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="#" class="action-btn" title="Cite"><i class="fas fa-quote-left"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+</main>
 
-                <!-- Add more years as needed -->
-            </div>
-        </div>
-    </section>
+<!-- ===== Footer ===== -->
+<footer class="w-full py-stack-md px-gutter flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto bg-surface-container dark:bg-primary-container mt-auto rounded-t-xl">
+<div class="mb-4 md:mb-0 text-center md:text-left">
+<span class="font-display-md text-headline-md font-bold text-primary dark:text-inverse-primary">Seungil Baek</span>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container mt-1">© 2026 Seungil Baek · Pusan National University</p>
+</div>
+<nav class="flex gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container hover:text-secondary transition-all opacity-80 hover:opacity-100" href="mailto:baek@pusan.ac.kr">Email</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container hover:text-secondary transition-all opacity-80 hover:opacity-100" href="https://orcid.org/0000-0002-0254-9107" target="_blank" rel="noopener">ORCID</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container hover:text-secondary transition-all opacity-80 hover:opacity-100" href="https://scholar.google.co.kr/citations?user=MsjuSigAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container hover:text-secondary transition-all opacity-80 hover:opacity-100" href="https://github.com/kerorobbang" target="_blank" rel="noopener">GitHub</a>
+</nav>
+</footer>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Seungil Baek. All rights reserved.</p>
-        </div>
-    </footer>
+<!-- ===== Modal ===== -->
+<div class="modal-overlay" id="pubModal">
+<div class="modal-content p-8 relative flex flex-col border-t-8 border-t-secondary" id="modalContent">
+<button class="absolute top-6 right-6 text-on-surface-variant dark:text-surface-variant hover:text-error transition-colors rounded-full p-1 hover:bg-error-container/20" id="closeModal" aria-label="Close">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="flex flex-wrap items-center gap-3 mb-4" id="modalBadges"></div>
+<h2 class="font-headline-lg text-headline-lg text-primary dark:text-inverse-primary mb-4 pr-10" id="modalTitle"></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-surface-variant mb-2" id="modalAuthors"></p>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant italic mb-8 pb-6 border-b border-outline-variant" id="modalVenue"></p>
+<div class="mb-8">
+<h3 class="font-headline-md text-headline-md text-primary dark:text-inverse-primary mb-4">Citation Details</h3>
+<dl class="space-y-2 font-body-md text-body-md text-on-surface-variant dark:text-surface-variant" id="modalDetails"></dl>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 mt-auto pt-6 border-t border-outline-variant">
+<a id="modalScholar" href="#" target="_blank" rel="noopener" class="flex-1 bg-primary hover:bg-secondary text-on-primary dark:bg-secondary dark:hover:bg-secondary-container dark:text-on-secondary font-label-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">school</span> Find on Google Scholar
+</a>
+<button id="copyCite" class="flex-1 bg-surface-container-high dark:bg-primary hover:bg-surface-variant text-on-surface dark:text-inverse-on-surface font-label-bold py-3 px-6 rounded-lg transition-colors border border-outline-variant flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">content_copy</span> Copy Citation
+</button>
+</div>
+</div>
+</div>
 
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/publications.js"></script>
+<script src="assets/js/publications.js"></script>
 </body>
 </html>

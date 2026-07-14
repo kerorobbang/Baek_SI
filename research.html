@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research — Seungil Baek</title>
+<meta name="description" content="Research directions of Seungil Baek: coastal & ocean remote sensing, UAV/airborne hyperspectral imaging, and machine learning for environmental monitoring.">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="assets/js/theme.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="bg-background text-on-background dark:bg-primary dark:text-inverse-on-surface font-body-md antialiased pt-24">
+
+<!-- ===== Top Nav ===== -->
+<header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-surface/95 dark:bg-primary/95 shadow-sm dark:shadow-none transition-all duration-300">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<a class="font-display-md text-headline-md font-extrabold text-primary dark:text-inverse-primary tracking-tight" href="index.html">Seungil Baek</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="nav-link text-on-surface-variant dark:text-surface-variant pb-1 hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300 font-label-bold text-label-bold" href="index.html">Home</a>
+<a aria-current="page" class="nav-link text-secondary dark:text-secondary-fixed border-b-2 border-secondary dark:border-secondary-fixed pb-1 font-label-bold text-label-bold" href="research.html">Research</a>
+<a class="nav-link text-on-surface-variant dark:text-surface-variant pb-1 hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300 font-label-bold text-label-bold" href="publications.html">Publications</a>
+<a class="nav-link text-on-surface-variant dark:text-surface-variant pb-1 hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300 font-label-bold text-label-bold" href="gallery.html">Gallery</a>
+</nav>
+<div class="flex items-center gap-2">
+<button data-theme-toggle aria-label="Toggle dark mode" class="p-2 rounded-full hover:bg-surface-variant dark:hover:bg-primary-container transition-colors text-on-surface-variant dark:text-surface-variant hover:text-secondary duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 0;">dark_mode</span>
+</button>
+<button data-mobile-toggle aria-label="Open menu" class="md:hidden p-2 rounded-full text-on-surface-variant dark:text-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<nav data-mobile-menu class="hidden md:hidden flex-col gap-1 px-gutter pb-4 bg-surface/98 dark:bg-primary/98 border-t border-surface-variant dark:border-primary-container">
+<a class="py-2 font-label-bold text-on-surface-variant dark:text-surface-variant" href="index.html">Home</a>
+<a class="py-2 font-label-bold text-secondary dark:text-secondary-fixed" href="research.html">Research</a>
+<a class="py-2 font-label-bold text-on-surface-variant dark:text-surface-variant" href="publications.html">Publications</a>
+<a class="py-2 font-label-bold text-on-surface-variant dark:text-surface-variant" href="gallery.html">Gallery</a>
+</nav>
+</header>
+
+<main class="max-w-container-max mx-auto px-gutter py-section-padding-desktop">
+
+<!-- Hero -->
+<header class="mb-section-padding-desktop max-w-4xl">
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary dark:text-inverse-primary mb-stack-md">Turning Spectra into Environmental Insight</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-surface-variant max-w-3xl leading-relaxed">My research sits at the intersection of optical remote sensing and quantitative environmental science. Across drones, aircraft and satellites, I build workflows that convert multispectral and hyperspectral measurements into reliable, physically-grounded estimates — for coastal waters, tidal ecosystems, forests, and engineered structures.</p>
+</header>
+
+<!-- ===== Domain 1: Coastal & Ocean Remote Sensing ===== -->
+<section class="mb-section-padding-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<div class="md:col-span-8 bg-surface-container-lowest dark:bg-primary-container p-8 md:p-12 rounded-xl border-l-4 border-secondary shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary"><span class="material-symbols-outlined">water</span></div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary dark:text-inverse-primary">Coastal &amp; Ocean Remote Sensing</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant mb-stack-lg">Coastal and shelf waters are optically complex and change quickly. I use ocean-color and hyperspectral observations — from GOCI-II to UAV and airborne sensors — to quantify harmful algal blooms (red tides), map tidal-flat vegetation and benthic habitats, and track water-quality constituents such as coloured dissolved organic matter. A recurring goal is customized bio-optical modelling that links measured radiance to biologically meaningful quantities.</p>
+<h3 class="font-headline-md text-headline-md text-primary dark:text-inverse-primary mb-stack-sm">Representative Work</h3>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant dark:text-surface-variant">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-secondary mt-1 text-[20px]">check_circle</span>Review on hyperspectral remote sensing of tidal zones — <em>Ocean Science Journal</em> (2025)</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-secondary mt-1 text-[20px]">check_circle</span>Bio-optical model for red tide intensity of <em>Margalefidinium polykrikoides</em> — <em>IEEE JSTARS</em> (2025)</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-secondary mt-1 text-[20px]">check_circle</span>Validation of GOCI-II products using synchronous UAV and ship measurements (2022)</li>
+</ul>
+</div>
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<div class="rounded-xl overflow-hidden shadow-sm h-48 md:h-64 relative ph ph-grid flex items-end">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<span class="absolute bottom-4 left-4 bg-secondary-fixed text-on-secondary-fixed font-label-bold text-[10px] px-2 py-1 rounded-sm uppercase tracking-wider z-10">Ocean Color</span>
+</div>
+<div class="bg-surface-bright dark:bg-primary p-6 rounded-xl shadow-sm border border-surface-container-high dark:border-primary-container">
+<h4 class="font-label-bold text-label-bold text-on-surface-variant dark:text-surface-variant uppercase mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">public</span>Platforms &amp; Data</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container text-xs font-label-bold">GOCI-II</span>
+<span class="px-2 py-1 rounded bg-surface-container-high dark:bg-primary-container text-on-surface dark:text-surface-variant text-xs font-label-bold">HLS (Landsat/Sentinel-2)</span>
+<span class="px-2 py-1 rounded bg-surface-container-high dark:bg-primary-container text-on-surface dark:text-surface-variant text-xs font-label-bold">UAV multispectral</span>
+<span class="px-2 py-1 rounded bg-surface-container-high dark:bg-primary-container text-on-surface dark:text-surface-variant text-xs font-label-bold">Airborne hyperspectral</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== Domain 2: UAV & Airborne Imaging ===== -->
+<section class="mb-section-padding-desktop">
+<div class="flex items-center gap-3 mb-stack-md">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary"><span class="material-symbols-outlined">flightsmode</span></div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary dark:text-inverse-primary">UAV &amp; Airborne Imaging</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="md:col-span-2 bg-surface-container-lowest dark:bg-primary-container p-8 rounded-xl border-l-4 border-tertiary-container shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-between">
+<div>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant mb-6">Reliable measurements from low-altitude platforms demand careful calibration. I work on radiometric correction of drone-mounted multispectral cameras (e.g. RedEdge-MX) by intercalibration with hyperspectral sensors, improving geometric precision by fusing high-resolution imagery, and correcting bidirectional reflectance (BRDF) effects that vary with forest type and season. The result is airborne data you can trust for quantitative analysis.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+<div class="bg-surface-bright dark:bg-primary p-4 rounded-lg">
+<h4 class="font-label-bold text-label-bold text-primary dark:text-inverse-primary mb-1">Sensors</h4>
+<p class="font-display-md text-display-md text-secondary dark:text-secondary-fixed">Multi + Hyper</p>
+<p class="text-sm text-on-surface-variant dark:text-surface-variant">spectral cameras</p>
+</div>
+<div class="bg-surface-bright dark:bg-primary p-4 rounded-lg">
+<h4 class="font-label-bold text-label-bold text-primary dark:text-inverse-primary mb-1">Focus</h4>
+<p class="font-display-md text-display-md text-secondary dark:text-secondary-fixed">Calibration</p>
+<p class="text-sm text-on-surface-variant dark:text-surface-variant">radiometric &amp; geometric</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-8 rounded-xl shadow-md flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md mb-4">Representative Work</h3>
+<ul class="space-y-4 font-body-md text-body-md text-on-primary/80">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[18px] mt-0.5">arrow_forward</span>RedEdge-MX correction coefficients via intercalibration (2020)</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[18px] mt-0.5">arrow_forward</span>Drone camera exterior orientation &amp; pixel precision (2021)</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[18px] mt-0.5">arrow_forward</span>UAV-based forest BRDF correction (2025)</li>
+</ul>
+</div>
+<a href="publications.html" class="mt-8 w-full inline-flex items-center justify-center py-3 rounded-full border border-on-primary/30 hover:bg-on-primary/10 transition-colors font-label-bold text-label-bold">See all publications</a>
+</div>
+</div>
+</section>
+
+<!-- ===== Domain 3: Machine Learning for Monitoring ===== -->
+<section class="mb-section-padding-desktop">
+<div class="bg-surface-container-lowest dark:bg-primary-container p-8 md:p-12 rounded-xl border-l-4 border-primary-container shadow-[0_4px_24px_rgba(0,0,0,0.02)] relative overflow-hidden">
+<div class="absolute right-0 top-0 w-64 h-64 bg-primary-fixed/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary"><span class="material-symbols-outlined">neurology</span></div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary dark:text-inverse-primary">Machine Learning for Monitoring</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant mb-6">Spectral imagery pairs naturally with data-driven methods. I apply machine learning and deep learning to estimate material properties from hyperspectral data (e.g. TiO₂ content and coarse-aggregate properties in concrete), to segment structures with foundation models such as the Segment Anything Model (SAM), to classify forest-fire damage for the CAS500-4 mission, and to detect change in coastal structures from UAV imagery.</p>
+<div class="mt-8">
+<h4 class="font-label-bold text-label-bold text-primary dark:text-inverse-primary uppercase mb-3 tracking-wide">Featured Applications</h4>
+<div class="space-y-3">
+<div class="bg-surface-bright dark:bg-primary p-3 rounded-md flex justify-between items-center border border-surface-container dark:border-primary-container">
+<span class="text-sm text-on-surface-variant dark:text-surface-variant font-medium">Deep-learning forest-fire classification (CAS500-4)</span>
+<span class="text-xs font-label-bold text-secondary dark:text-secondary-fixed">14 cites</span>
+</div>
+<div class="bg-surface-bright dark:bg-primary p-3 rounded-md flex justify-between items-center border border-surface-container dark:border-primary-container">
+<span class="text-sm text-on-surface-variant dark:text-surface-variant font-medium">Hyperspectral TiO₂ estimation in cementitious material</span>
+<span class="text-xs font-label-bold text-secondary dark:text-secondary-fixed">Remote Sensing</span>
+</div>
+<div class="bg-surface-bright dark:bg-primary p-3 rounded-md flex justify-between items-center border border-surface-container dark:border-primary-container">
+<span class="text-sm text-on-surface-variant dark:text-surface-variant font-medium">Coarse-aggregate evaluation with SAM</span>
+<span class="text-xs font-label-bold text-secondary dark:text-secondary-fixed">Constr. &amp; Build. Mat.</span>
+</div>
+</div>
+</div>
+</div>
+<div class="rounded-xl overflow-hidden shadow-sm aspect-square md:aspect-auto md:h-full relative ph ph-grid flex items-center justify-center min-h-[240px]">
+<span class="material-symbols-outlined text-inverse-on-surface/90 relative z-10" style="font-size:64px;">grain</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Collaboration note -->
+<section class="mb-section-padding-desktop">
+<div class="bg-surface-container dark:bg-primary-container rounded-2xl p-8 md:p-12 text-center">
+<h3 class="font-headline-md text-headline-md text-primary dark:text-inverse-primary mb-3">Collaboration &amp; Fieldwork</h3>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant max-w-2xl mx-auto mb-6">This work is carried out with colleagues at Pusan National University and partner institutions, combining field campaigns, controlled experiments, and remote sensing data across Korean coastal and terrestrial sites.</p>
+<a href="index.html#contact" class="inline-flex items-center gap-2 font-label-bold text-secondary dark:text-secondary-fixed hover:text-primary transition-colors">Get in touch <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="w-full bg-primary dark:bg-primary-container rounded-t-xl">
+<div class="max-w-container-max mx-auto py-section-padding-desktop px-gutter flex flex-col md:flex-row justify-between items-center gap-stack-md">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-display-md text-headline-md font-bold text-on-primary">Seungil Baek</span>
+<p class="font-body-md text-body-md text-on-primary/80 text-center md:text-left">© 2026 Seungil Baek · Pusan National University</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="index.html">Home</a>
+<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="publications.html">Publications</a>
+<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="https://orcid.org/0000-0002-0254-9107" target="_blank" rel="noopener">ORCID</a>
+<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="https://scholar.google.co.kr/citations?user=MsjuSigAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
