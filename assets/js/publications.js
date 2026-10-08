@@ -112,6 +112,10 @@ function render() {
 
 function card(p) {
   const topicClass = TOPIC_COLORS[p.topic] || "bg-surface-container-high text-on-surface";
+  const metric = getJournalMetrics(p);
+  const qClass = metric?.quartile === "Q1"
+    ? "bg-secondary-container text-on-secondary-container"
+    : "bg-surface-container-high dark:bg-primary text-on-surface dark:text-inverse-on-surface";
   return `
     <article data-idx="${p._idx}" class="pub-card cursor-pointer bg-surface dark:bg-primary-container rounded-xl p-6 md:p-8 shadow-sm card-lift border-l-4 border-l-secondary flex flex-col md:flex-row gap-6">
       <div class="flex-grow">
@@ -131,6 +135,21 @@ function card(p) {
           </button>
         </div>
       </div>
+
+      <aside class="w-full md:w-48 md:flex-none grid grid-cols-3 md:grid-cols-1 gap-3 md:gap-4 border-t md:border-t-0 md:border-l border-outline-variant pt-4 md:pt-0 md:pl-6" aria-label="Article citations and journal impact metrics">
+        <div class="text-center md:text-right">
+          <div class="text-xl font-extrabold tabular-nums text-primary dark:text-inverse-primary" title="${citationExplanation}">${citationCount(p)}</div>
+          <div class="text-[11px] leading-tight text-on-surface-variant dark:text-surface-variant">Citations*</div>
+        </div>
+        <div class="text-center md:text-right">
+          <div class="text-xl font-bold tabular-nums text-primary dark:text-inverse-primary">${metric ? metric.impactFactor : "—"}</div>
+          <div class="text-[11px] leading-tight text-on-surface-variant dark:text-surface-variant">${metric ? metric.system + " IF · 2025" : "JCR IF · 2025"}</div>
+        </div>
+        <div class="text-center md:text-right">
+          ${metric ? `<a href="${metric.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="${esc(metric.system + " 2025 · " + metric.category)}" class="inline-block rounded-md px-3 py-1 text-sm font-extrabold ${qClass} hover:underline">${metric.quartile}</a>` : `<span class="text-lg font-bold text-on-surface-variant dark:text-surface-variant">—</span>`}
+          <div class="text-[11px] leading-tight text-on-surface-variant dark:text-surface-variant">${metric ? metric.system : "JCR"} Quartile</div>
+        </div>
+      </aside>
     </article>`;
 }
 
@@ -142,6 +161,7 @@ function authorsHtml(authors) {
 /* ---- Modal ---- */
 const modal = document.getElementById("pubModal");
 function openModal(p) {
+  const metric = getJournalMetrics(p);
   document.getElementById("modalTitle").textContent = p.title;
   document.getElementById("modalAuthors").innerHTML = authorsHtml(p.authors);
   document.getElementById("modalVenue").textContent = p.venue;
@@ -155,7 +175,11 @@ function openModal(p) {
     `<div class="flex gap-2"><dt class="font-semibold text-primary dark:text-inverse-primary min-w-[90px]">Authors</dt><dd>${authorsHtml(p.authors)}</dd></div>` +
     `<div class="flex gap-2"><dt class="font-semibold text-primary dark:text-inverse-primary min-w-[90px]">Published in</dt><dd>${esc(p.venue)}</dd></div>` +
     `<div class="flex gap-2"><dt class="font-semibold text-primary dark:text-inverse-primary min-w-[90px]">Year</dt><dd>${p.year}</dd></div>` +
-    (p.doi ? `<div class="flex gap-2"><dt class="font-semibold text-primary dark:text-inverse-primary min-w-[90px]">DOI</dt><dd><a class="text-secondary dark:text-secondary-fixed underline break-all" href="${doiUrl(p.doi)}" target="_blank" rel="noopener">${esc(p.doi)}</a></dd></div>` : "");
+    (p.doi ? `<div class="flex gap-2"><dt class="font-semibold text-primary dark:text-inverse-primary min-w-[90px]">DOI</dt><dd><a class="text-secondary dark:text-secondary-fixed underline break-all" href="${doiUrl(p.doi)}" target="_blank" rel="noopener">${esc(p.doi)}</a></dd></div>` : "") +
+    `<div class="flex gap-2"><dt class="font-semibold text-primary dark:text-inverse-primary min-w-[90px]">Citations*</dt><dd>${citationCount(p)} <span class="text-xs">(historical snapshot, date unknown)</span></dd></div>` +
+    (metric ? `<div class="flex gap-2"><dt class="font-semibold text-primary dark:text-inverse-primary min-w-[90px]">Journal IF</dt><dd><a class="underline text-secondary dark:text-secondary-fixed" href="${metric.url}" target="_blank" rel="noopener">${metric.impactFactor} (${metric.system} 2025)</a></dd></div>` +
+      `<div class="flex gap-2"><dt class="font-semibold text-primary dark:text-inverse-primary min-w-[90px]">Quartile</dt><dd>${metric.quartile} (${metric.system} 2025 · ${esc(metric.category)})</dd></div>` :
+      `<div class="flex gap-2"><dt class="font-semibold text-primary dark:text-inverse-primary min-w-[90px]">Journal IF / Q</dt><dd>2025 JCR indicator unavailable</dd></div>`);
 
   document.getElementById("modalScholar").href = scholarSearch(p.title);
 
