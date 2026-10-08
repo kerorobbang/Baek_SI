@@ -42,7 +42,8 @@ python -m http.server 8000
 
 - **논문 목록**: [assets/js/publications.js](assets/js/publications.js)의 `PUBLICATIONS` 배열이 유일한 원본 데이터입니다. 새 논문에는 정식 게재연도(`year`), 저자, 학술지, DOI(`doi`)를 기입하세요. [Google Scholar 프로필](https://scholar.google.co.kr/citations?user=MsjuSigAAAAJ), 학술지/출판사 및 KCI/KIOST 서지정보를 대조합니다.
 - **논문 편수**: 홈페이지·CV의 `[data-publication-count]`, `[data-publications-year]` 값은 `publications.js`에서 자동 갱신됩니다. 새 자료 추가 시 HTML 편수만 따로 고칠 필요가 없습니다.
-- **인용 관련 수치**: 인용수, h-index, i10-index는 정적 파일에 저장·표시하지 않습니다. 시간에 따라 변하므로 페이지의 Google Scholar 링크로 확인합니다.
+- **인용 관련 수치**: [Google Scholar 연구자 프로필](https://scholar.google.co.kr/citations?user=MsjuSigAAAAJ)의 **2026-10-08 사용자 제공 스냅샷**을 기준으로 총 126회(2021년 이후 125회), h-index 7, i10-index 5를 표시합니다. 논문별 인용수 합계도 126회로 검증했습니다. 실시간 자동 연동이 아니므로 새 스냅샷을 받아 수동 갱신합니다.
+- **저널 IF 및 Quartile**: `JOURNAL_METRICS`에 기록된 2025 JCR 또는 KCI 지표를 사용합니다. JCR IF와 KCI 2년 IF를 혼용해 비교하지 않으며 분류 분야와 원본 URL을 함께 제시합니다. 검증되지 않은 값은 `—`로 남깁니다.
 - **대표논문**: 첫 화면(`index.html`)과 CV(`cv.html`)의 대표논문 카드는 직접 관리합니다. 새로운 대표 연구가 발표되면 함께 수정하세요.
 - **이미지**: `assets/images/`에 프로필 사진(`portrait.jpg`)과 갤러리 사진(카테고리별 7종 × 3장)이 들어 있습니다. [PNU-QUREOS Activity 페이지](https://sites.google.com/view/pnu-qureos/activity)에서 가져온 실제 현장조사 사진입니다. 더 넣거나 교체하려면 같은 폴더에 파일을 추가하고 `gallery.html`/`index.html`의 `<img src="assets/images/...">`를 수정하세요.
 - **이메일 등 연락처**: `seung1100@pusan.ac.kr`(PNU-QUREOS Members 페이지에서 확인된 실제 주소)를 사용 중입니다. 바뀌면 각 페이지의 `mailto:` 링크를 교체하세요.
@@ -55,4 +56,4 @@ python -m http.server 8000
 - 산림 BRDF `GEO DATA` 논문의 정식 영문 제목 및 저자 표기 정리 (DOI: 10.22761/GD.2023.0057).
 - 일부 2025–2026년 논문에 검증된 DOI 링크 추가, 홈페이지/CV 대표논문과 Research 소개 갱신.
 
-> Google Scholar는 자동 동기화하지 않습니다. 전체 목록과 현재 인용지표는 프로필과 대조해야 하며, 이 저장소의 논문 목록은 2026-10-08 검토 기준의 수동 큐레이션입니다.
+> Google Scholar는 자동 동기화하지 않습니다. 2026-10-08 사용자 제공 스냅샷을 논문별로 반영했으며 정적 파일의 인용수는 이후 증가를 자동 반영하지 않습니다.
