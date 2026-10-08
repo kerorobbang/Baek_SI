@@ -38,13 +38,13 @@ const PUBLICATIONS = [
    Different indexing systems are labelled and must not be compared directly.
    Quartiles refer to a named subject category; they can vary by category. */
 const JOURNAL_METRICS = {
-  "Ocean Science Journal": { impactFactor: 1.5, quartile: "Q3", system: "JCR", category: "Marine & Freshwater Biology", year: 2025, url: "https://sciwatch.kiost.ac.kr/" },
+  "Ocean Science Journal": { impactFactor: 1.5, quartile: "Q3", system: "JCR", category: "Marine & Freshwater Biology", year: 2025, url: "https://www.minicod.com/journals/ocean-science-journal-b305c498" },
   "Remote Sensing": { impactFactor: 4.3, quartile: "Q1", system: "JCR", category: "Geosciences, Multidisciplinary (Q2 in Remote Sensing)", year: 2025, url: "https://www.mdpi.com/journal/remotesensing/stats" },
-  "IEEE J. Selected Topics in Applied Earth Observations and Remote Sensing": { impactFactor: 6.3, quartile: "Q1", system: "JCR", category: "Remote Sensing", year: 2025, url: "https://www.akaturk.com/journals/17700155033?lang=en" },
+  "IEEE J. Selected Topics in Applied Earth Observations and Remote Sensing": { impactFactor: 6.3, quartile: "Q1", system: "JCR", category: "Remote Sensing", year: 2025, url: "https://portalcientifico.upm.es/en/ipublic/source/15513" },
   "Korean Journal of Remote Sensing": { impactFactor: 0.58, quartile: "Q2", system: "KCI", category: "Other Natural Sciences", year: 2025, url: "https://www.kci.go.kr/kciportal/po/search/poCitaView.kci?sereId=000443" },
   "GEO DATA": { impactFactor: 0.42, quartile: "Q2", system: "KCI", category: "Earth Science", year: 2025, url: "https://www.kci.go.kr/kciportal/po/search/poCitaView.kci?sereId=SER000005565" },
-  "Construction and Building Materials": { impactFactor: 8.9, quartile: "Q1", system: "JCR", category: "Construction & Building Technology", year: 2025, url: "https://www.akaturk.com/journals/24443?lang=en" },
-  "IEEE Transactions on Geoscience and Remote Sensing": { impactFactor: 9.4, quartile: "Q1", system: "JCR", category: "Remote Sensing", year: 2025, url: "https://www.grss-ieee.org/publications/transactions-on-geoscience-remote-sensing/" },
+  "Construction and Building Materials": { impactFactor: 8.9, quartile: "Q1", system: "JCR", category: "Construction & Building Technology", year: 2025, url: "https://lib.nbt.edu.cn/subject/indexed/paper_print.php?sid=13573&son=if&whatdb=scie" },
+  "IEEE Transactions on Geoscience and Remote Sensing": { impactFactor: 8.6, quartile: "Q1", system: "JCR", category: "Remote Sensing", year: 2025, url: "https://www.linkedin.com/posts/ieee-grss_tgrs-ieeegrss-journalmetrics-activity-7382747311015256065-UwJw" },
   "Journal of Earthquake and Tsunami": { impactFactor: 2.7, quartile: "Q2", system: "JCR", category: "Geochemistry & Geophysics", year: 2025, url: "https://researchcloud.net/journal/1793-7116" },
   "Forests": { impactFactor: 3.1, quartile: "Q2", system: "JCR", category: "Forestry", year: 2025, url: "https://www.mdpi.com/journal/forests/stats" },
   "The Sea: Journal of the Korean Society of Oceanography": { impactFactor: 0.17, quartile: "Q3", system: "KCI", category: "Oceanography", year: 2025, url: "https://www.kci.go.kr/kciportal/po/search/poCitaView.kci?sereId=000255" },
@@ -57,6 +57,14 @@ const getJournalMetrics = (paper) => {
 };
 const citationCount = (paper) => Number.isInteger(paper.citations) ? String(paper.citations) : "—";
 const citationExplanation = "Google Scholar profile snapshot supplied on 8 October 2026. These figures are not live-synchronized.";
+const SCHOLAR_SNAPSHOT = { date: "2026-10-08", citationsSince2021: 125 };
+const computedCitations = PUBLICATIONS.map(p => Number(p.citations || 0)).sort((a, b) => b - a);
+const SCHOLAR_PROFILE = {
+  citations: computedCitations.reduce((sum, n) => sum + n, 0),
+  hIndex: computedCitations.reduce((h, n, idx) => n >= idx + 1 ? idx + 1 : h, 0),
+  i10Index: computedCitations.filter(n => n >= 10).length,
+  citationsSince2021: SCHOLAR_SNAPSHOT.citationsSince2021
+};
 
 const TOPIC_COLORS = {
   "Ocean & Coastal": "bg-secondary-container text-on-secondary-container",
@@ -204,6 +212,17 @@ function closeModal() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const profileBindings = {
+    "data-citation-total": SCHOLAR_PROFILE.citations,
+    "data-citations-since-2021": SCHOLAR_PROFILE.citationsSince2021,
+    "data-h-index": SCHOLAR_PROFILE.hIndex,
+    "data-i10-index": SCHOLAR_PROFILE.i10Index
+  };
+  Object.entries(profileBindings).forEach(([attr, value]) => {
+    document.querySelectorAll("[" + attr + "]").forEach(el => {
+      el.textContent = String(value);
+    });
+  });
   document.querySelectorAll("[data-publication-count]").forEach(el => {
     el.textContent = String(PUBLICATIONS.length);
   });
