@@ -45,6 +45,7 @@ python -m http.server 8000
 - **인용 관련 수치**: [Google Scholar 연구자 프로필](https://scholar.google.co.kr/citations?user=MsjuSigAAAAJ)의 **2026-10-08 사용자 제공 스냅샷**을 기준으로 총 126회(2021년 이후 125회), h-index 7, i10-index 5를 표시합니다. 논문별 인용수 합계도 126회로 검증했습니다. 실시간 자동 연동이 아니므로 새 스냅샷을 받아 수동 갱신합니다.
 - **저널 IF 및 Quartile**: `JOURNAL_METRICS`에 기록된 2025 JCR 또는 KCI 지표를 사용합니다. JCR IF와 KCI 2년 IF를 혼용해 비교하지 않으며 분류 분야와 원본 URL을 함께 제시합니다. 검증되지 않은 값은 `—`로 남깁니다.
 - **대표논문**: 첫 화면(`index.html`)과 CV(`cv.html`)의 대표논문 카드는 직접 관리합니다. 새로운 대표 연구가 발표되면 함께 수정하세요.
+- **Research 이미지**: `assets/images/research-ocean.avif`, `research-uav.avif`, `research-ai.avif`는 Research 각 섹션에 사용하는 AI 생성 개념 이미지입니다(실제 관측자료나 검증 결과 그림이 아님). 고해상도 AVIF로 압축했으며 이미지 변경 시 `research.html`의 경로와 대체 텍스트를 함께 관리하세요.
 - **이미지**: `assets/images/`에 프로필 사진(`portrait.jpg`)과 갤러리 사진(카테고리별 7종 × 3장)이 들어 있습니다. [PNU-QUREOS Activity 페이지](https://sites.google.com/view/pnu-qureos/activity)에서 가져온 실제 현장조사 사진입니다. 더 넣거나 교체하려면 같은 폴더에 파일을 추가하고 `gallery.html`/`index.html`의 `<img src="assets/images/...">`를 수정하세요.
 - **이메일 등 연락처**: `seung1100@pusan.ac.kr`(PNU-QUREOS Members 페이지에서 확인된 실제 주소)를 사용 중입니다. 바뀌면 각 페이지의 `mailto:` 링크를 교체하세요.
 
